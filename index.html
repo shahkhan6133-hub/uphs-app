@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1D4ED8">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+<meta name="theme-color" content="#7C3AED">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="UPHS">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Universal Public High School - Management Dashboard</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -111,10 +113,44 @@ tbody tr:last-child td{border-bottom:none}
 @media print{body{background:white}.hdr{display:none}.af .btns{display:none}.af{max-width:100%}}
 @media(max-width:768px){.cr{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.dg{grid-template-columns:1fr}.pwrap{flex-direction:column;align-items:flex-start}.fg{grid-template-columns:1fr}}
 
+
+/* ===== COLOURFUL CARDS + APP FEEL ===== */
+html{-webkit-tap-highlight-color:transparent}
+body{background:linear-gradient(180deg,#F5F3FF 0,#FAFAF8 320px);-webkit-user-select:none;user-select:none}
+input,textarea,td,.dv,.mc{-webkit-user-select:text;user-select:text}
+.hdr{padding-top:env(safe-area-inset-top,0)}
+.sc{--c:#7C3AED;--c2:#A78BFA;position:relative;overflow:hidden;color:#fff;border:none;border-radius:20px;padding:20px;
+  background:linear-gradient(135deg,var(--c),var(--c2));box-shadow:0 8px 20px -8px var(--c)}
+.sc::after{content:"";position:absolute;right:-28px;bottom:-34px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.16)}
+.sc:hover{transform:translateY(-3px);box-shadow:0 14px 26px -10px var(--c)}
+.sc .sv,.sc .sl,.sc .ss{color:#fff;position:relative;z-index:1}
+.sc .sl{font-size:12px;font-weight:600;opacity:.95}
+.sc .ss{opacity:.85;font-size:11px}
+.sc .si{width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.25)!important;position:relative;z-index:1}
+.sc .si svg{width:20px;height:20px}
+.sg .sc:nth-child(7n+1){--c:#7C3AED;--c2:#A78BFA}
+.sg .sc:nth-child(7n+2){--c:#F97316;--c2:#FBBF24}
+.sg .sc:nth-child(7n+3){--c:#0D9488;--c2:#2DD4BF}
+.sg .sc:nth-child(7n+4){--c:#16A34A;--c2:#4ADE80}
+.sg .sc:nth-child(7n+5){--c:#0284C7;--c2:#38BDF8}
+.sg .sc:nth-child(7n+6){--c:#E11D48;--c2:#FB7185}
+.sg .sc:nth-child(7n+7){--c:#DB2777;--c2:#F472B6}
+.cc{border-top:5px solid #A78BFA;box-shadow:0 6px 18px -10px rgba(124,58,237,.4)}
+.cr .cc:nth-child(2){border-top-color:#F59E0B}
+.tw{border-top:5px solid #A78BFA}
+.tb.ac{background:linear-gradient(135deg,#7C3AED,#A78BFA);color:#fff;box-shadow:0 4px 10px -3px rgba(124,58,237,.5)}
+.tb:hover:not(.ac){background:#EDE9FE;color:#5B21B6}
+.btn{background:linear-gradient(135deg,#7C3AED,#A78BFA);color:#fff}
+.btn:hover{background:linear-gradient(135deg,#6D28D9,#8B5CF6)}
+thead{background:#F5F3FF}
+#syncChip{display:none;margin-left:auto;padding:7px 14px;border:none;border-radius:999px;font-weight:600;font-size:12px;color:#fff;cursor:pointer;background:#6B7280}
+#installBtn{display:none;margin-left:8px;padding:9px 18px;border:none;border-radius:999px;font-weight:600;font-size:13px;color:#fff;cursor:pointer;background:linear-gradient(135deg,#16A34A,#22D3EE);box-shadow:0 4px 12px -4px #16A34A}
+@media(max-width:768px){.hi{padding:14px 16px}.cont{padding:16px 14px 28px}.sc{padding:16px}.sv{font-size:22px}}
+@media(display-mode:standalone){body{overscroll-behavior-y:none}}
 </style>
 </head>
 <body>
-<div class="hdr"><div class="hi"><div class="hrow"><div class="hl" style="background:linear-gradient(135deg,#4ADE80,#22D3EE);color:#fff;font-size:20px;width:44px;height:44px;border-radius:14px;box-shadow:0 4px 12px rgba(74,222,128,.3)">U</div><div><div class="ht" style="background:linear-gradient(90deg,#4ADE80,#22D3EE,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:20px;font-weight:800;letter-spacing:-.5px">Universal Public High School</div><div class="hs" id="hs" style="color:#6B7280;font-size:11px;font-weight:500">School Management System</div></div></div><div class="tabs" id="tabs"></div></div></div>
+<div class="hdr"><div class="hi"><div class="hrow"><div class="hl" style="background:linear-gradient(135deg,#4ADE80,#22D3EE);color:#fff;font-size:20px;width:44px;height:44px;border-radius:14px;box-shadow:0 4px 12px rgba(74,222,128,.3)">U</div><div><div class="ht" style="background:linear-gradient(90deg,#4ADE80,#22D3EE,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:20px;font-weight:800;letter-spacing:-.5px">Universal Public High School</div><div class="hs" id="hs" style="color:#6B7280;font-size:11px;font-weight:500">School Management System</div></div><button id="syncChip" type="button"></button><button id="installBtn" type="button">Install App</button></div><div class="tabs" id="tabs"></div></div></div>
 <div class="cont"><div id="page"></div></div>
 <div class="mo" id="mo" style="display:none" onclick="closem(event)"><div class="mc" id="mc" onclick="event.stopPropagation()"></div></div>
 <script>
@@ -1488,12 +1524,13 @@ var DB={
   ]
 };
 DB['Student Categories']=DB['Student Categories']||[];
+    DB['Periods']=DB['Periods']||[];DB['PeriodSubjects']=DB['PeriodSubjects']||[];DB['PeriodClassSubjects']=DB['PeriodClassSubjects']||{};
 DB['Stationery']=DB['Stationery']||[];
 var C={l:'#B8A9E8',a:'#F5A623',t:'#4ECDC4',c:'#FF6B6B',g:'#4ADE80',k:'#1A1A1A'};
 var sc={Active:C.g,Inactive:C.c,Graduated:C.t,Transferred:C.a,Present:C.g,Absent:C.c,Late:C.a,Leave:C.l,Paid:C.g,Pending:C.a,Overdue:C.c,Partial:C.l,'On Leave':C.a,Retired:C.t,Resigned:C.c};
 var st={Active:'#166534',Inactive:'#DC2626',Graduated:'#115E59',Transferred:'#92400E',Present:'#166534',Absent:'#DC2626',Late:'#92400E',Leave:'#5B21B6',Paid:'#166534',Pending:'#92400E',Overdue:'#DC2626',Partial:'#5B21B6','On Leave':'#92400E',Retired:'#115E59',Resigned:'#DC2626'};
 
-var TABS=['Overview','Students','Student Categories','Stationery & Books','Teachers & Staff','Attendance','Exam Results','Fees & Payments','Timetable','Admission Form','Daily Attendance','Attendance Records','Monthly Expenses','Teacher Salaries','Salary Details'];
+var TABS=['Overview','Students','Student Categories','Stationery & Books','Teachers & Staff','Attendance','Exam Results','Fees & Payments','Timetable','Admission Form','Daily Attendance','Periods','Attendance Records','Monthly Expenses','Teacher Salaries','Salary Details'];
 var cur='Overview',q='',gf='all';
 
 function s(v){return String(v||'').trim()}
@@ -1540,7 +1577,7 @@ var hg={Students:1,Attendance:1,'Exam Results':1,'Fees & Payments':1,'Classes & 
 var gradeOrder={'Nursery':0,'LKG':0.3,'UKG':0.6,'KG':1,'1':2,'2':3,'3':4,'4':5,'5':6,'6':7,'7':8,'8':9,'9':10,'10':11,'11':12,'12':13};
 function grades(){
   var g=new Set();
-  for(var t in DB)DB[t].forEach(function(r){if(r.grade)g.add(s(r.grade))});
+  for(var t in DB){if(!Array.isArray(DB[t])||t==='Periods'||t==='PeriodSubjects')continue;DB[t].forEach(function(r){if(r&&r.grade)g.add(s(r.grade))})}
   return Array.from(g).sort(function(a,b){return(gradeOrder[a]||99)-(gradeOrder[b]||99)});
 }
 
@@ -1568,7 +1605,7 @@ function icodefs(){
 }
 
 function statCard(l,v,n,co,su){
-  var h='<div class="sc"><div class="st"><div class="si" style="background:'+co+'15">'+ico(n,co)+'</div><div class="sv">'+v+'</div></div><div class="sl">'+l+'</div>';
+  var h='<div class="sc"><div class="st"><div class="si">'+ico(n,'#fff')+'</div><div class="sv">'+v+'</div></div><div class="sl">'+l+'</div>';
   if(su)h+='<div class="ss">'+su+'</div>';
   return h+'</div>';
 }
@@ -1617,6 +1654,10 @@ function renderOverview(){
   h+=statCard('Fees Collected','Rs '+f(collected),'fee',C.g,collRate+'% collected');
   h+=statCard('Outstanding','Rs '+f(totalFee-collected),'fee',C.c,unpaid+' unpaid');
   h+=statCard('Exam Records',exm.length,'exam',C.t,'Across subjects');
+  perEnsure();
+  var pT=perDay(),pR=DB['Periods'].filter(function(x){return x.date===pT}),pA=pR.filter(function(x){return x.status==='Attended'}).length,pM=pR.length-pA;
+  h+=statCard('Periods Attended Today',(pR.length?Math.round(pA/pR.length*100):0)+'%','time',C.g,pA+' of '+pR.length+' marked periods');
+  h+=statCard('Periods Missed Today',pM,'att',C.c,pM?'Check classes below':'No missed periods');
   h+='</div>';
   h+='</div>';
 
@@ -1642,6 +1683,18 @@ function renderOverview(){
   h+='<div class="cc"><div class="ct">'+ico('fee',C.a)+' Fee Status</div>'+pieChart(pdata,[C.g,C.a,C.c,C.l])+'</div>';
   h+='</div></div>';
   
+  // === PERIODS TODAY BY CLASS ===
+  var pcl='';
+  PER_GRADES.forEach(function(g){var r=pR.filter(function(x){return x.grade===g}),a2=r.filter(function(x){return x.status==='Attended'}).length,m2=r.length-a2;
+    if(r.length){var miss=r.filter(function(x){return x.status==='Missed'}).map(function(x){return x.subject}).join(', ');
+      pcl+='<tr><td style="font-weight:600">'+classLabel(g)+'</td><td style="color:#166534;font-weight:600">'+a2+'</td><td style="color:#DC2626;font-weight:600">'+m2+'</td><td style="font-size:12px;color:#6B7280">'+(miss||'-')+'</td></tr>'}});
+  h+='<div class="cc" style="margin-top:24px;border-top-color:#16A34A"><div class="ct">'+ico('time','#16A34A')+' Periods Today by Class</div>';
+  var p7=[];for(var di=6;di>=0;di--){var dd=new Date(Date.now()-di*864e5),ds=perDay(dd),rr=DB['Periods'].filter(function(x){return x.date===ds});
+    p7.push({label:mosFull[dd.getMonth()].slice(0,3)+' '+dd.getDate(),a:rr.filter(function(x){return x.status==='Attended'}).length,m:rr.filter(function(x){return x.status==='Missed'}).length})}
+  h+='<div class="sl" style="margin:4px 0 8px;color:#6B6B6B">Last 7 days (all classes)</div>'+perChart(p7)+'<div class="sl" style="margin:18px 0 8px;color:#6B6B6B">Today by class</div>';
+  h+=pcl?'<div class="tsx"><table><thead><tr><th>Class</th><th>Attended</th><th>Missed</th><th>Missed subjects</th></tr></thead><tbody>'+pcl+'</tbody></table></div>':'<p style="font-size:12px;color:#9B9B9B">No periods marked today. Open the Periods tab to mark them.</p>';
+  h+='</div>';
+
   // === BACKUP & RESTORE SECTION ===
   h+='<div class="cc" style="margin-top:24px"><div class="ct">🗄️ Data Backup &amp; Restore</div>';
   h+='<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">';
@@ -2797,7 +2850,7 @@ function renderCategories(){
   h+=statCard('Total tagged',total,'student',C.l);
   for(var i=0;i<CAT_TYPES.length;i++){
     var t=CAT_TYPES[i], col=CAT_COLOR[t];
-    h+='<div class="sc"><div class="st"><div class="si" style="background:'+col+'20"><div style="width:14px;height:14px;border-radius:50%;background:'+col+'"></div></div><div class="sv">'+counts[t]+'</div></div><div class="sl">'+t+'</div><div class="ss">'+(total?Math.round(counts[t]/total*100):0)+'% of tagged</div></div>';
+    h+='<div class="sc" style="--c:'+col+';--c2:'+col+'CC"><div class="st"><div class="si"><div style="width:14px;height:14px;border-radius:50%;background:#fff"></div></div><div class="sv">'+counts[t]+'</div></div><div class="sl">'+t+'</div><div class="ss">'+(total?Math.round(counts[t]/total*100):0)+'% of tagged</div></div>';
   }
   h+='</div>';
 
@@ -3268,6 +3321,7 @@ function printStationeryReport(){
 function saveDB(){
   try{localStorage.setItem('uphs_db',JSON.stringify(DB))}catch(e){alert('Storage full! Please export data.')}
   document.getElementById('hs').textContent=DB['Students'].length+' students  |  '+DB['Teachers & Staff'].length+' staff  |  9 modules';
+  if(window.uphsSync)uphsSync.changed();
 }
 
 // ===== EXPORT CSV =====
@@ -3429,11 +3483,114 @@ function printForm(){
 }
 
 // ===== RENDER ROUTER =====
+// ===== PERIODS (per class, per subject: Attended / Missed) =====
+var PER_JUNIOR=['English','Urdu','Maths','Pak Studies','Islamiat','Science'];
+var PER_SENIOR=PER_JUNIOR.concat(['Biology','Chemistry','Physics']);
+var PER_GRADES=['Nursery','LKG','UKG','KG','1','2','3','4','5','6','7','8','9','10'];
+function perDay(d){var x=d||new Date();return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2)}
+var _perClass='',_perDate=perDay();
+function perEnsure(){DB['Periods']=DB['Periods']||[];DB['PeriodSubjects']=DB['PeriodSubjects']||[];DB['PeriodClassSubjects']=DB['PeriodClassSubjects']||{}}
+// Subject list is per class and editable. Grades 8-10 get Biology/Chemistry/Physics, Nursery-7 do not.
+function perSubjects(g){
+  perEnsure();var m=DB['PeriodClassSubjects'];
+  if(!m[g]){var base=(g==='8'||g==='9'||g==='10')?PER_SENIOR:PER_JUNIOR;
+    m[g]=base.concat(DB['PeriodSubjects'].filter(function(x){return base.indexOf(x)<0}))}
+  return m[g];
+}
+function perIdx(g,d,sub){var a=DB['Periods'];for(var i=0;i<a.length;i++){if(a[i].grade===g&&a[i].date===d&&a[i].subject===sub)return i}return -1}
+function perCard(l,v,su,c1,c2){return '<div class="sc" style="--c:'+c1+';--c2:'+c2+'"><div class="st"><div class="si">'+ico('time','#fff')+'</div><div class="sv">'+v+'</div></div><div class="sl">'+l+'</div><div class="ss">'+su+'</div></div>'}
+function perChart(items){
+  var mx=0;items.forEach(function(x){mx=Math.max(mx,x.a+x.m)});
+  if(!mx)return '<p style="font-size:12px;color:#9B9B9B">No periods marked yet.</p>';
+  var h='<div class="tsx"><div class="bars" style="min-width:'+(items.length*58)+'px">';
+  items.forEach(function(x){var ha=Math.round(x.a/mx*135),hm=Math.round(x.m/mx*135);
+    h+='<div class="bc"><div class="bn">'+(x.a+x.m)+'</div>'
+      +(x.m?'<div class="bf" style="height:'+hm+'px;background:linear-gradient(#FB7185,#E11D48)"></div>':'')
+      +(x.a?'<div class="bf" style="height:'+ha+'px;background:linear-gradient(#4ADE80,#16A34A);'+(x.m?'border-radius:0':'')+'"></div>':'')
+      +'<div class="bl">'+x.label+'</div></div>'});
+  return h+'</div></div><div style="display:flex;gap:14px;font-size:11px;color:#6B6B6B;margin-top:8px"><span><b style="color:#16A34A">&#9632;</b> Attended</span><span><b style="color:#E11D48">&#9632;</b> Missed</span></div>';
+}
+
+function renderPeriods(){
+  perEnsure();
+  var h='<div class="fade"><div class="af" style="max-width:900px">';
+  h+='<h2>🕒 Periods</h2><p class="sub">Select a class and date, then tap Attended or Missed for each subject. Subjects can be renamed, removed or added for each class.</p>';
+  h+='<div class="tbar" style="margin-bottom:10px"><select class="fs" onchange="_perClass=this.value;perRefresh()"><option value="">Select Class</option>';
+  for(var g=0;g<PER_GRADES.length;g++){var gl=PER_GRADES[g];h+='<option value="'+gl+'"'+(gl===_perClass?' selected':'')+'>'+classLabel(gl)+'</option>'}
+  h+='</select><input type="date" class="fs" value="'+_perDate+'" onchange="_perDate=this.value||perDay();perRefresh()"></div>';
+  h+='<div class="tbar" style="margin-bottom:16px"><input type="text" id="perNew" class="fs" placeholder="New subject name" style="min-width:170px"> <label style="font-size:12px;color:#6B6B6B;display:flex;align-items:center;gap:6px"><input type="checkbox" id="perAll"> all classes</label> <button class="btn" type="button" onclick="perAddSubject()">➕ Add Subject</button></div>';
+  h+='<div id="per-body">'+perBody()+'</div></div></div>';
+  return h;
+}
+function perRefresh(){var b=document.getElementById('per-body');if(b)b.innerHTML=perBody()}
+
+function perBody(){
+  if(!_perClass)return '<div class="emp"><p>Select a class above to begin</p></div>';
+  var subs=perSubjects(_perClass),a=0,m=0,i,h='';
+  for(i=0;i<subs.length;i++){var k=perIdx(_perClass,_perDate,subs[i]);if(k>=0){if(DB['Periods'][k].status==='Attended')a++;else m++}}
+  var nm=subs.length-a-m;
+  h+='<div class="sg" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-bottom:18px">';
+  h+=perCard('Attended',a,'periods today','#16A34A','#4ADE80');
+  h+=perCard('Missed',m,'periods today','#E11D48','#FB7185');
+  h+=perCard('Not marked',nm,'still to mark','#0284C7','#38BDF8');
+  h+=perCard('Attendance rate',(a+m?Math.round(a/(a+m)*100):0)+'%',classLabel(_perClass),'#7C3AED','#A78BFA');
+  h+='</div>';
+  h+='<div class="tw"><div class="tsx"><table><thead><tr><th>Subject</th><th>Period status</th></tr></thead><tbody>';
+  for(i=0;i<subs.length;i++){
+    var k2=perIdx(_perClass,_perDate,subs[i]),st=k2>=0?DB['Periods'][k2].status:'';
+    h+='<tr><td><div style="font-weight:600">'+subs[i]+'</div><button class="btn-d" type="button" onclick="perRename('+i+')">rename</button> <button class="btn-d" style="color:#FF6B6B" type="button" onclick="perDelSubject('+i+')">remove</button></td><td style="white-space:nowrap">';
+    h+='<button type="button" onclick="perSet('+i+',\'Attended\')" style="padding:8px 16px;border-radius:999px;border:1px solid #16A34A;cursor:pointer;font-weight:600;font-size:12px;margin-right:8px;'+(st==='Attended'?'background:#16A34A;color:#fff':'background:#fff;color:#16A34A')+'">✓ Attended</button>';
+    h+='<button type="button" onclick="perSet('+i+',\'Missed\')" style="padding:8px 16px;border-radius:999px;border:1px solid #E11D48;cursor:pointer;font-weight:600;font-size:12px;'+(st==='Missed'?'background:#E11D48;color:#fff':'background:#fff;color:#E11D48')+'">✗ Missed</button>';
+    h+='</td></tr>';
+  }
+  h+='</tbody></table></div></div>';
+  // monthly chart + table for this class
+  var ym=_perDate.slice(0,7),rows='',items=[];
+  subs.forEach(function(sb){var aa=0,mm=0;DB['Periods'].forEach(function(r){if(r.grade===_perClass&&r.subject===sb&&r.date.slice(0,7)===ym){if(r.status==='Attended')aa++;else mm++}});
+    items.push({label:sb,a:aa,m:mm});
+    if(aa+mm)rows+='<tr><td>'+sb+'</td><td style="color:#166534;font-weight:600">'+aa+'</td><td style="color:#DC2626;font-weight:600">'+mm+'</td><td>'+Math.round(aa/(aa+mm)*100)+'%</td></tr>'});
+  h+='<div class="cc" style="margin-top:18px"><div class="ct">'+ico('time','#7C3AED')+' '+classLabel(_perClass)+' - periods by subject ('+ym+')</div>'+perChart(items);
+  if(rows)h+='<div class="tsx" style="margin-top:14px"><table><thead><tr><th>Subject</th><th>Attended</th><th>Missed</th><th>Rate</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+  return h+'</div>';
+}
+
+function perSet(i,status){
+  var sub=perSubjects(_perClass)[i],k=perIdx(_perClass,_perDate,sub);
+  if(k>=0&&DB['Periods'][k].status===status){DB['Periods'].splice(k,1)}          // tap again = unmark
+  else if(k>=0){DB['Periods'][k].status=status}
+  else{DB['Periods'].push({id:Date.now()+i,date:_perDate,grade:_perClass,subject:sub,status:status})}
+  saveDB();perRefresh();
+}
+function perHas(g,v){return perSubjects(g).some(function(x){return x.toLowerCase()===v.toLowerCase()})}
+function perAddSubject(){
+  var el=document.getElementById('perNew'),v=el?el.value.trim():'',all=document.getElementById('perAll').checked;
+  if(!v)return;
+  if(!all&&!_perClass){alert('Select a class first, or tick "all classes".');return}
+  (all?PER_GRADES:[_perClass]).forEach(function(g){if(!perHas(g,v))perSubjects(g).push(v)});
+  saveDB();el.value='';perRefresh();
+}
+function perRename(i){
+  var list=perSubjects(_perClass),old=list[i],v=prompt('Rename subject',old);
+  if(v===null)return;v=v.trim();if(!v||v===old)return;
+  if(perHas(_perClass,v)){alert('This subject already exists in this class.');return}
+  list[i]=v;
+  DB['Periods'].forEach(function(r){if(r.grade===_perClass&&r.subject===old)r.subject=v});
+  saveDB();perRefresh();
+}
+function perDelSubject(i){
+  var list=perSubjects(_perClass),nm=list[i];
+  if(!confirm('Remove "'+nm+'" from '+classLabel(_perClass)+'? Its period records for this class will also be deleted.'))return;
+  list.splice(i,1);
+  DB['Periods']=DB['Periods'].filter(function(r){return !(r.grade===_perClass&&r.subject===nm)});
+  saveDB();perRefresh();
+}
+
 function render(){
   var pg=document.getElementById('page');
   if(cur==='Overview')pg.innerHTML=renderOverview();
   else if(cur==='Admission Form')pg.innerHTML=renderAdmissionForm();
   else if(cur==='Daily Attendance')pg.innerHTML=renderDailyAttendance();
+  else if(cur==='Periods')pg.innerHTML=renderPeriods();
   else if(cur==='Attendance Records')pg.innerHTML=renderAttRecords();
   else if(cur==='Monthly Expenses')pg.innerHTML=renderExpenses();
   else if(cur==='Teacher Salaries')pg.innerHTML=renderTeacherSalaries();
@@ -3727,10 +3884,15 @@ function init(){
   cur='Overview';render();
 }
 init();
+
+// ===== INSTALLABLE APP (PWA) =====
+var _dip=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();_dip=e;document.getElementById('installBtn').style.display='inline-block'});
+document.getElementById('installBtn').onclick=function(){if(!_dip)return;_dip.prompt();_dip.userChoice.then(function(){_dip=null;document.getElementById('installBtn').style.display='none'})};
+window.addEventListener('appinstalled',function(){document.getElementById('installBtn').style.display='none'});
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"3279d41ec7804124a29acc6e692f9a2b"}' crossorigin="anonymous"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"3279d41ec7804124a29acc6e692f9a2b"}' crossorigin="anonymous"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"3279d41ec7804124a29acc6e692f9a2b"}' crossorigin="anonymous"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"3279d41ec7804124a29acc6e692f9a2b"}' crossorigin="anonymous"></script>
+<script src="config.js"></script>
+<script src="sync.js"></script>
 </body>
 </html>
