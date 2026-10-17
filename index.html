@@ -147,10 +147,218 @@ thead{background:#F5F3FF}
 #installBtn{display:none;margin-left:8px;padding:9px 18px;border:none;border-radius:999px;font-weight:600;font-size:13px;color:#fff;cursor:pointer;background:linear-gradient(135deg,#16A34A,#22D3EE);box-shadow:0 4px 12px -4px #16A34A}
 @media(max-width:768px){.hi{padding:14px 16px}.cont{padding:16px 14px 28px}.sc{padding:16px}.sv{font-size:22px}}
 @media(display-mode:standalone){body{overscroll-behavior-y:none}}
+
+/* ===== THEMES / CLICKABLE CARDS / WHATSAPP / MULTI-SELECT ===== */
+#themeBtn{padding:8px 14px;border:none;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;background:#EDE9FE;color:#5B21B6;white-space:nowrap}
+#syncChip{margin-left:8px}
+#themePop{display:none;position:absolute;right:0;top:calc(100% + 8px);z-index:300;width:210px;background:#fff;color:#1A1A1A;border:1px solid #F0F0F0;border-radius:16px;padding:10px;box-shadow:0 14px 34px -10px rgba(0,0,0,.3)}
+#themePop.open{display:block}
+.thm-t{font-size:11px;font-weight:600;color:#9B9B9B;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px 8px}
+.thm{display:flex;align-items:center;gap:10px;width:100%;padding:8px 10px;margin-bottom:2px;border:2px solid transparent;border-radius:12px;background:none;cursor:pointer;font-size:13px;font-weight:500;color:inherit;text-align:left;font-family:inherit}
+.thm:hover{background:rgba(124,58,237,.08)}
+.thm.on{border-color:#7C3AED}
+.thm i{width:26px;height:26px;border-radius:50%;display:inline-block;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.sc[data-tab]{cursor:pointer}
+.sc[data-tab]:active{transform:scale(.98)}
+.sc[data-tab]:focus-visible{outline:3px solid rgba(0,0,0,.35);outline-offset:2px}
+.sc[data-tab] .sl::after{content:' \203A';font-weight:700}
+.wa-row{display:none;margin-right:6px;padding:4px 9px;font-size:13px;border:none;border-radius:8px;background:#16A34A;color:#fff;cursor:pointer}
+tr.is-abs .wa-row{display:inline-block}
+.wa-line{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #F0F0F0}
+.wa-nm{flex:1;min-width:0;font-weight:600;font-size:13px}
+.wa-line input{width:140px;padding:8px 10px;border:1px solid #E0E0E0;border-radius:10px;font-size:13px;font-family:inherit}
+.wa-send{background:#16A34A;color:#fff;border:none;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.wa-send.done{background:#9CA3AF}
+.msdw{position:relative}
+.msd-lab{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#6B6B6B;margin-bottom:6px}
+.msd{position:relative}
+.msd-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 14px;font-size:13px;border:1px solid #F0F0F0;border-radius:12px;background:#fff;cursor:pointer;text-align:left;font-family:inherit;color:inherit}
+.msd-panel{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:40;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 14px 30px -10px rgba(0,0,0,.3);max-height:280px;overflow-y:auto;padding:8px}
+.msd-panel.open{display:block}
+.msd-top{display:flex;gap:8px;padding:2px 2px 8px;border-bottom:1px solid #F0F0F0;margin-bottom:4px}
+.msd-top button{padding:6px 12px;font-size:12px;font-weight:600;border:1px solid #E5E7EB;border-radius:999px;background:#fff;color:inherit;cursor:pointer;font-family:inherit}
+.msd-item{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:10px;cursor:pointer;font-size:13px}
+.msd-item:hover{background:#F5F3FF}
+.msd-item input{width:18px;height:18px;accent-color:#7C3AED;flex-shrink:0}
+.pl-row{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:13px}
+.pl-row span{flex:1;min-width:0}
+.pl-row input{width:120px;padding:8px 10px;border:1px solid #F0F0F0;border-radius:10px;font-size:13px;font-family:inherit}
+#sbTotal{margin-top:8px;font-size:12px;font-weight:600;color:#6B6B6B}
+@media(max-width:768px){#themeBtn .tlab{display:none}.wa-line input{width:112px}}
+body[data-theme="ocean"]{background:linear-gradient(180deg,#EFF8FF 0,#FAFAF8 320px)}
+body[data-theme="ocean"] .tb.ac{background:linear-gradient(135deg,#0284C7,#38BDF8);box-shadow:0 4px 10px -3px #0284C7}
+body[data-theme="ocean"] .tb:hover:not(.ac){background:#E0F2FE;color:#075985}
+body[data-theme="ocean"] .btn,body[data-theme="ocean"] .btn-submit{background:linear-gradient(135deg,#0284C7,#38BDF8)}
+body[data-theme="ocean"] .btn:hover{background:linear-gradient(135deg,#075985,#0284C7)}
+body[data-theme="ocean"] thead{background:#EFF8FF}
+body[data-theme="ocean"] .cc,body[data-theme="ocean"] .tw{border-top-color:#38BDF8}
+body[data-theme="ocean"] .btn-d{color:#0284C7}
+body[data-theme="ocean"] .ff input:focus,body[data-theme="ocean"] .ff select:focus,body[data-theme="ocean"] .ff textarea:focus{border-color:#38BDF8;box-shadow:0 0 0 2px #0284C733}
+body[data-theme="ocean"] .hl{background:linear-gradient(135deg,#38BDF8,#0284C7)!important}
+body[data-theme="ocean"] .ht{background:linear-gradient(90deg,#0284C7,#38BDF8,#075985)!important;-webkit-background-clip:text!important;background-clip:text!important}
+body[data-theme="ocean"] .msd-item:hover{background:#E0F2FE}
+body[data-theme="ocean"] .thm.on{border-color:#0284C7}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+1){--c:#0369A1;--c2:#38BDF8}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+2){--c:#0EA5E9;--c2:#7DD3FC}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+3){--c:#0D9488;--c2:#2DD4BF}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+4){--c:#2563EB;--c2:#60A5FA}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+5){--c:#0891B2;--c2:#22D3EE}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+6){--c:#4F46E5;--c2:#818CF8}
+body[data-theme="ocean"] .sg .sc:nth-child(7n+7){--c:#0284C7;--c2:#7DD3FC}
+body[data-theme="forest"]{background:linear-gradient(180deg,#F0FDF4 0,#FAFAF8 320px)}
+body[data-theme="forest"] .tb.ac{background:linear-gradient(135deg,#16A34A,#4ADE80);box-shadow:0 4px 10px -3px #16A34A}
+body[data-theme="forest"] .tb:hover:not(.ac){background:#DCFCE7;color:#166534}
+body[data-theme="forest"] .btn,body[data-theme="forest"] .btn-submit{background:linear-gradient(135deg,#16A34A,#4ADE80)}
+body[data-theme="forest"] .btn:hover{background:linear-gradient(135deg,#166534,#16A34A)}
+body[data-theme="forest"] thead{background:#F0FDF4}
+body[data-theme="forest"] .cc,body[data-theme="forest"] .tw{border-top-color:#4ADE80}
+body[data-theme="forest"] .btn-d{color:#16A34A}
+body[data-theme="forest"] .ff input:focus,body[data-theme="forest"] .ff select:focus,body[data-theme="forest"] .ff textarea:focus{border-color:#4ADE80;box-shadow:0 0 0 2px #16A34A33}
+body[data-theme="forest"] .hl{background:linear-gradient(135deg,#4ADE80,#16A34A)!important}
+body[data-theme="forest"] .ht{background:linear-gradient(90deg,#16A34A,#4ADE80,#166534)!important;-webkit-background-clip:text!important;background-clip:text!important}
+body[data-theme="forest"] .msd-item:hover{background:#DCFCE7}
+body[data-theme="forest"] .thm.on{border-color:#16A34A}
+body[data-theme="forest"] .sg .sc:nth-child(7n+1){--c:#15803D;--c2:#4ADE80}
+body[data-theme="forest"] .sg .sc:nth-child(7n+2){--c:#16A34A;--c2:#86EFAC}
+body[data-theme="forest"] .sg .sc:nth-child(7n+3){--c:#0D9488;--c2:#5EEAD4}
+body[data-theme="forest"] .sg .sc:nth-child(7n+4){--c:#65A30D;--c2:#BEF264}
+body[data-theme="forest"] .sg .sc:nth-child(7n+5){--c:#047857;--c2:#34D399}
+body[data-theme="forest"] .sg .sc:nth-child(7n+6){--c:#059669;--c2:#6EE7B7}
+body[data-theme="forest"] .sg .sc:nth-child(7n+7){--c:#4D7C0F;--c2:#A3E635}
+body[data-theme="sunset"]{background:linear-gradient(180deg,#FFF7ED 0,#FAFAF8 320px)}
+body[data-theme="sunset"] .tb.ac{background:linear-gradient(135deg,#F97316,#FBBF24);box-shadow:0 4px 10px -3px #F97316}
+body[data-theme="sunset"] .tb:hover:not(.ac){background:#FFEDD5;color:#9A3412}
+body[data-theme="sunset"] .btn,body[data-theme="sunset"] .btn-submit{background:linear-gradient(135deg,#F97316,#FBBF24)}
+body[data-theme="sunset"] .btn:hover{background:linear-gradient(135deg,#9A3412,#F97316)}
+body[data-theme="sunset"] thead{background:#FFF7ED}
+body[data-theme="sunset"] .cc,body[data-theme="sunset"] .tw{border-top-color:#FBBF24}
+body[data-theme="sunset"] .btn-d{color:#F97316}
+body[data-theme="sunset"] .ff input:focus,body[data-theme="sunset"] .ff select:focus,body[data-theme="sunset"] .ff textarea:focus{border-color:#FBBF24;box-shadow:0 0 0 2px #F9731633}
+body[data-theme="sunset"] .hl{background:linear-gradient(135deg,#FBBF24,#F97316)!important}
+body[data-theme="sunset"] .ht{background:linear-gradient(90deg,#F97316,#FBBF24,#9A3412)!important;-webkit-background-clip:text!important;background-clip:text!important}
+body[data-theme="sunset"] .msd-item:hover{background:#FFEDD5}
+body[data-theme="sunset"] .thm.on{border-color:#F97316}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+1){--c:#EA580C;--c2:#FB923C}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+2){--c:#F59E0B;--c2:#FCD34D}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+3){--c:#DC2626;--c2:#F87171}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+4){--c:#F97316;--c2:#FDBA74}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+5){--c:#D97706;--c2:#FBBF24}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+6){--c:#E11D48;--c2:#FB7185}
+body[data-theme="sunset"] .sg .sc:nth-child(7n+7){--c:#C2410C;--c2:#FB923C}
+body[data-theme="rose"]{background:linear-gradient(180deg,#FFF1F2 0,#FAFAF8 320px)}
+body[data-theme="rose"] .tb.ac{background:linear-gradient(135deg,#E11D48,#FB7185);box-shadow:0 4px 10px -3px #E11D48}
+body[data-theme="rose"] .tb:hover:not(.ac){background:#FFE4E6;color:#9F1239}
+body[data-theme="rose"] .btn,body[data-theme="rose"] .btn-submit{background:linear-gradient(135deg,#E11D48,#FB7185)}
+body[data-theme="rose"] .btn:hover{background:linear-gradient(135deg,#9F1239,#E11D48)}
+body[data-theme="rose"] thead{background:#FFF1F2}
+body[data-theme="rose"] .cc,body[data-theme="rose"] .tw{border-top-color:#FB7185}
+body[data-theme="rose"] .btn-d{color:#E11D48}
+body[data-theme="rose"] .ff input:focus,body[data-theme="rose"] .ff select:focus,body[data-theme="rose"] .ff textarea:focus{border-color:#FB7185;box-shadow:0 0 0 2px #E11D4833}
+body[data-theme="rose"] .hl{background:linear-gradient(135deg,#FB7185,#E11D48)!important}
+body[data-theme="rose"] .ht{background:linear-gradient(90deg,#E11D48,#FB7185,#9F1239)!important;-webkit-background-clip:text!important;background-clip:text!important}
+body[data-theme="rose"] .msd-item:hover{background:#FFE4E6}
+body[data-theme="rose"] .thm.on{border-color:#E11D48}
+body[data-theme="rose"] .sg .sc:nth-child(7n+1){--c:#BE123C;--c2:#FB7185}
+body[data-theme="rose"] .sg .sc:nth-child(7n+2){--c:#DB2777;--c2:#F472B6}
+body[data-theme="rose"] .sg .sc:nth-child(7n+3){--c:#E11D48;--c2:#FDA4AF}
+body[data-theme="rose"] .sg .sc:nth-child(7n+4){--c:#C026D3;--c2:#E879F9}
+body[data-theme="rose"] .sg .sc:nth-child(7n+5){--c:#9D174D;--c2:#F472B6}
+body[data-theme="rose"] .sg .sc:nth-child(7n+6){--c:#F43F5E;--c2:#FDA4AF}
+body[data-theme="rose"] .sg .sc:nth-child(7n+7){--c:#A21CAF;--c2:#E879F9}
+body[data-theme="dark"]{background:#0B1220;color:#E5E7EB;color-scheme:dark}
+body[data-theme="dark"] .hdr{background:rgba(15,23,42,.92);border-bottom-color:#1F2A44}
+body[data-theme="dark"] .tabs{background:rgba(30,41,59,.8)}
+body[data-theme="dark"] .tb{color:#94A3B8}
+body[data-theme="dark"] .tb:hover:not(.ac){background:#1E293B;color:#fff}
+body[data-theme="dark"] .cc,body[data-theme="dark"] .tw,body[data-theme="dark"] .mc{background:#111C33;border-color:#1F2A44;color:#E5E7EB}
+body[data-theme="dark"] thead{background:#162036}
+body[data-theme="dark"] th{color:#94A3B8;border-bottom-color:#1F2A44}
+body[data-theme="dark"] td{border-bottom-color:#1F2A44}
+body[data-theme="dark"] tbody tr:hover{background:#162036}
+body[data-theme="dark"] input:not([type=radio]):not([type=checkbox]):not([type=file]),body[data-theme="dark"] select,body[data-theme="dark"] textarea,body[data-theme="dark"] .sb input,body[data-theme="dark"] .fs,body[data-theme="dark"] .ff input,body[data-theme="dark"] .ff select,body[data-theme="dark"] .ff textarea{background:#0F172A;color:#E5E7EB;border-color:#26324D}
+body[data-theme="dark"] .cnt,body[data-theme="dark"] .bl,body[data-theme="dark"] .bn,body[data-theme="dark"] .pli,body[data-theme="dark"] .af .sub,body[data-theme="dark"] .dl,body[data-theme="dark"] .emp p,body[data-theme="dark"] .ff label,body[data-theme="dark"] .msd-lab,body[data-theme="dark"] #sbTotal{color:#94A3B8}
+body[data-theme="dark"] .pli b,body[data-theme="dark"] .af h2,body[data-theme="dark"] .dv,body[data-theme="dark"] [style*="color:#1A1A1A"]{color:#E5E7EB!important}
+body[data-theme="dark"] [style*="color:#6B6B6B"]{color:#94A3B8!important}
+body[data-theme="dark"] .di,body[data-theme="dark"] .form-section,body[data-theme="dark"] .wa-line,body[data-theme="dark"] .msd-top{border-color:#26324D}
+body[data-theme="dark"] .mx{color:#94A3B8}
+body[data-theme="dark"] .mx:hover{background:#1F2A44}
+body[data-theme="dark"] .btn-reset,body[data-theme="dark"] .btn-print,body[data-theme="dark"] .photo-btn,body[data-theme="dark"] .msd-top button{background:#111C33;color:#CBD5E1;border-color:#26324D}
+body[data-theme="dark"] .btn-submit{background:linear-gradient(135deg,#7C3AED,#A78BFA)}
+body[data-theme="dark"] .admn-id-box,body[data-theme="dark"] .photo-preview{background:#0F172A;border-color:#26324D;color:#E5E7EB}
+body[data-theme="dark"] .msd-btn,body[data-theme="dark"] .msd-panel{background:#0F172A;border-color:#26324D;color:#E5E7EB}
+body[data-theme="dark"] .msd-item:hover{background:#1E293B}
+body[data-theme="dark"] #themeBtn{background:#1E293B;color:#E5E7EB}
+body[data-theme="dark"] #themePop{background:#111C33;color:#E5E7EB;border-color:#26324D}
+body[data-theme="dark"] #backupGuideBox>div{background:#111C33!important;color:#E5E7EB}
+body[data-theme="dark"] #backupGuideBox pre{color:#1A1A1A!important}
+#toastBox{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:#111827;color:#fff;padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:9999;max-width:90vw;text-align:center}
+#toastBox.on{opacity:1;transform:translateX(-50%) translateY(0)}
+#appVer{position:fixed;left:8px;bottom:4px;font-size:10px;color:#9B9B9B;opacity:.7;z-index:5;pointer-events:none}
+
+.ptt{border-collapse:collapse;min-width:980px;width:100%;font-size:12px}
+.ptt th{background:#F5F3FF;padding:10px 8px;text-align:center;font-size:11px;letter-spacing:.3px;border:1px solid #E5E7EB;white-space:nowrap;color:#4C1D95}
+.ptt td{border:1px solid #E5E7EB;padding:8px 6px;text-align:center;vertical-align:middle;cursor:pointer;min-width:92px;height:56px}
+.ptt tbody tr:hover{background:transparent}
+.ptt td:hover{background:#FAF5FF}
+.ptt td b{display:block;font-weight:600;font-size:12px;color:#1A1A1A}
+.ptt td span{display:block;font-size:11px;color:#7C3AED;margin-top:2px}
+.ptt td.ptc{position:sticky;left:0;z-index:2;background:#fff;font-weight:700;min-width:84px;text-align:left;padding-left:10px;box-shadow:2px 0 0 #E5E7EB}
+.ptt th.ptc{position:sticky;left:0;z-index:3}
+.ptt td.ptb{background:#F3F4F6;cursor:default;min-width:44px;width:44px;padding:0}
+.ptt td.ptb div{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;letter-spacing:4px;color:#9CA3AF;margin:auto}
+.ptt td.ptclash{background:#FEF2F2;box-shadow:inset 0 0 0 2px #F87171}
+.ptt td.ptclash span::after{content:' \26A0'}
+.ptt .ptadd{color:#C4C4C4;font-size:18px}
+body[data-theme="dark"] .ptt th{background:#162036;color:#CBD5E1;border-color:#26324D}
+body[data-theme="dark"] .ptt td{border-color:#26324D}
+body[data-theme="dark"] .ptt td:hover{background:#162036}
+body[data-theme="dark"] .ptt td b{color:#E5E7EB}
+body[data-theme="dark"] .ptt td span{color:#C4B5FD}
+body[data-theme="dark"] .ptt td.ptc{background:#111C33;box-shadow:2px 0 0 #26324D}
+body[data-theme="dark"] .ptt td.ptb{background:#162036}
+body[data-theme="dark"] .ptt td.ptclash{background:#3B1D24}
+/* ===== ADD-ON: DMC / LEAVING CERTIFICATE / STUDENT CARDS / FEE RECEIPTS ===== */
+.uxbox{background:#fff;border:1px solid #F0F0F0;border-radius:16px;padding:16px;margin-bottom:16px}
+.uxt{font-size:14px;font-weight:700;margin-bottom:12px}
+.uxg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.uxb{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;font-size:12px;font-weight:600;border:none;border-radius:999px;cursor:pointer;color:#fff;background:#7C3AED;font-family:inherit}
+.uxb.sm{padding:5px 11px;font-size:11px}
+.uxb.ghost{background:#fff;color:#444;border:1px solid #E5E5E5}
+.uxrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.uxmk{width:100%;border-collapse:collapse;font-size:13px}
+.uxmk th,.uxmk td{padding:6px 6px;border-bottom:1px solid #F0F0F0;text-align:left}
+.uxmk th{font-size:11px;text-transform:uppercase;color:#777}
+.uxmk input{width:100%;padding:8px 10px;border:1px solid #E5E5E5;border-radius:10px;font-size:13px;background:#fff;outline:none;font-family:inherit}
+.uxsum{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.uxsum span{background:#F5F3FF;color:#4C1D95;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700}
+.uxsw{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.uxsw button.sw{width:46px;height:32px;border-radius:10px;border:3px solid #fff;box-shadow:0 0 0 1px #ddd;cursor:pointer}
+.uxsw button.sw.on{box-shadow:0 0 0 3px #1A1A1A}
+.uxsw input[type=color]{width:42px;height:32px;border:none;padding:0;background:none;cursor:pointer}
+.uxpics{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.uxpics div{position:relative;width:96px;height:64px;border-radius:10px;overflow:hidden;border:1px solid #ddd}
+.uxpics img{width:100%;height:100%;object-fit:cover}
+.uxpics button{position:absolute;top:2px;right:2px;border:none;background:rgba(0,0,0,.65);color:#fff;border-radius:50%;width:20px;height:20px;cursor:pointer;line-height:20px;padding:0}
+.uxcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.uxcpair{background:#fff;border:1px solid #F0F0F0;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.uxcpair .cap{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700}
+.uxov{position:fixed;inset:0;background:rgba(15,15,25,.75);z-index:300;display:flex;flex-direction:column}
+.uxov .bar{display:flex;gap:8px;align-items:center;padding:10px 14px;background:#fff;padding-top:max(10px,env(safe-area-inset-top,0))}
+.uxov .bar b{flex:1;font-size:14px;color:#111;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.uxov .vw{flex:1;overflow:auto;padding:12px;-webkit-overflow-scrolling:touch}
+.uxov iframe{border:0;background:#fff;box-shadow:0 6px 30px rgba(0,0,0,.4);transform-origin:top left;display:block}
+.uxpick{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.uxpick button{text-align:left;padding:10px 12px;border:1px solid #E5E5E5;border-radius:12px;background:#fff;cursor:pointer;font-size:13px}
+.uxnote{font-size:12px;color:#6B6B6B;margin-top:8px}
+body[data-theme="dark"] .uxbox,body[data-theme="dark"] .uxcpair{background:#111C33;border-color:#1F2A44;color:#E5E7EB}
+body[data-theme="dark"] .uxmk input{background:#0B1326;color:#E5E7EB;border-color:#26324D}
+body[data-theme="dark"] .uxb.ghost,body[data-theme="dark"] .uxpick button{background:#111C33;color:#CBD5E1;border-color:#26324D}
+body[data-theme="dark"] .uxsum span{background:#1E1B4B;color:#C4B5FD}
+@media(max-width:600px){.uxcards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="hdr"><div class="hi"><div class="hrow"><div class="hl" style="background:linear-gradient(135deg,#4ADE80,#22D3EE);color:#fff;font-size:20px;width:44px;height:44px;border-radius:14px;box-shadow:0 4px 12px rgba(74,222,128,.3)">U</div><div><div class="ht" style="background:linear-gradient(90deg,#4ADE80,#22D3EE,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:20px;font-weight:800;letter-spacing:-.5px">Universal Public High School</div><div class="hs" id="hs" style="color:#6B7280;font-size:11px;font-weight:500">School Management System</div></div><button id="syncChip" type="button"></button><button id="installBtn" type="button">Install App</button></div><div class="tabs" id="tabs"></div></div></div>
+<div class="hdr"><div class="hi"><div class="hrow"><div class="hl" style="background:linear-gradient(135deg,#4ADE80,#22D3EE);color:#fff;font-size:20px;width:44px;height:44px;border-radius:14px;box-shadow:0 4px 12px rgba(74,222,128,.3)">U</div><div><div class="ht" style="background:linear-gradient(90deg,#4ADE80,#22D3EE,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:20px;font-weight:800;letter-spacing:-.5px">Universal Public High School</div><div class="hs" id="hs" style="color:#6B7280;font-size:11px;font-weight:500">School Management System</div></div><span id="themeWrap" style="position:relative;margin-left:auto"><button id="themeBtn" type="button" onclick="toggleThemePop(event)">&#127912; <span class="tlab">Theme</span></button><div id="themePop"></div></span><button id="syncChip" type="button"></button><button id="installBtn" type="button">Install App</button></div><div class="tabs" id="tabs"></div></div></div>
 <div class="cont"><div id="page"></div></div>
 <div class="mo" id="mo" style="display:none" onclick="closem(event)"><div class="mc" id="mc" onclick="event.stopPropagation()"></div></div>
 <script>
@@ -1530,7 +1738,7 @@ var C={l:'#B8A9E8',a:'#F5A623',t:'#4ECDC4',c:'#FF6B6B',g:'#4ADE80',k:'#1A1A1A'};
 var sc={Active:C.g,Inactive:C.c,Graduated:C.t,Transferred:C.a,Present:C.g,Absent:C.c,Late:C.a,Leave:C.l,Paid:C.g,Pending:C.a,Overdue:C.c,Partial:C.l,'On Leave':C.a,Retired:C.t,Resigned:C.c};
 var st={Active:'#166534',Inactive:'#DC2626',Graduated:'#115E59',Transferred:'#92400E',Present:'#166534',Absent:'#DC2626',Late:'#92400E',Leave:'#5B21B6',Paid:'#166534',Pending:'#92400E',Overdue:'#DC2626',Partial:'#5B21B6','On Leave':'#92400E',Retired:'#115E59',Resigned:'#DC2626'};
 
-var TABS=['Overview','Students','Student Categories','Stationery & Books','Teachers & Staff','Attendance','Exam Results','Fees & Payments','Timetable','Admission Form','Daily Attendance','Periods','Attendance Records','Monthly Expenses','Teacher Salaries','Salary Details'];
+var TABS=['Overview','Students','Promote Students','Student Categories','Stationery & Books','Teachers & Staff','Attendance','Exam Results','Fees & Payments','Timetable','Admission Form','Student Cards','Leaving Certificate','Daily Attendance','Periods','Attendance Records','Monthly Expenses','Teacher Salaries'];
 var cur='Overview',q='',gf='all';
 
 function s(v){return String(v||'').trim()}
@@ -1604,8 +1812,8 @@ function icodefs(){
   '</defs></svg>';
 }
 
-function statCard(l,v,n,co,su){
-  var h='<div class="sc"><div class="st"><div class="si">'+ico(n,'#fff')+'</div><div class="sv">'+v+'</div></div><div class="sl">'+l+'</div>';
+function statCard(l,v,n,co,su,tab){
+  var h='<div class="sc"'+(tab?' data-tab="'+String(tab).replace(/&/g,'&amp;')+'" role="button" tabindex="0" onclick="goTab(this.getAttribute(\'data-tab\'))" onkeydown="if(event.key===\'Enter\')goTab(this.getAttribute(\'data-tab\'))"':'')+'><div class="st"><div class="si">'+ico(n,'#fff')+'</div><div class="sv">'+v+'</div></div><div class="sl">'+l+'</div>';
   if(su)h+='<div class="ss">'+su+'</div>';
   return h+'</div>';
 }
@@ -1647,17 +1855,17 @@ function renderOverview(){
   var attRate=todayAtt.length?Math.round(presentToday/todayAtt.length*100):0;
 
   var h='<div class="fade"><div class="sg">';
-  h+=statCard('Total Students',sts.length,'student',C.l,activeS+' active');
-  h+=statCard('Teachers & Staff',tch.length,'teacher',C.a,activeT+' active');
-  h+=statCard('Classes',cls.length,'cls',C.t,'Nursery to Grade 10');
-  h+=statCard('Attendance Today',attRate+'%','att',C.g,presentToday+'/'+todayAtt.length+' present');
-  h+=statCard('Fees Collected','Rs '+f(collected),'fee',C.g,collRate+'% collected');
-  h+=statCard('Outstanding','Rs '+f(totalFee-collected),'fee',C.c,unpaid+' unpaid');
-  h+=statCard('Exam Records',exm.length,'exam',C.t,'Across subjects');
+  h+=statCard('Total Students',sts.length,'student',C.l,activeS+' active','Students');
+  h+=statCard('Teachers & Staff',tch.length,'teacher',C.a,activeT+' active','Teachers & Staff');
+  h+=statCard('Classes',cls.length,'cls',C.t,'Nursery to Grade 10','Classes & Sections');
+  h+=statCard('Attendance Today',attRate+'%','att',C.g,presentToday+'/'+todayAtt.length+' present','Attendance Records');
+  h+=statCard('Fees Collected','Rs '+f(collected),'fee',C.g,collRate+'% collected','Fees & Payments');
+  h+=statCard('Outstanding','Rs '+f(totalFee-collected),'fee',C.c,unpaid+' unpaid','Fees & Payments');
+  h+=statCard('Exam Records',exm.length+uxList('ExamDMC').length,'exam',C.t,'Across subjects','Exam Results');
   perEnsure();
   var pT=perDay(),pR=DB['Periods'].filter(function(x){return x.date===pT}),pA=pR.filter(function(x){return x.status==='Attended'}).length,pM=pR.length-pA;
-  h+=statCard('Periods Attended Today',(pR.length?Math.round(pA/pR.length*100):0)+'%','time',C.g,pA+' of '+pR.length+' marked periods');
-  h+=statCard('Periods Missed Today',pM,'att',C.c,pM?'Check classes below':'No missed periods');
+  h+=statCard('Periods Attended Today',(pR.length?Math.round(pA/pR.length*100):0)+'%','time',C.g,pA+' of '+pR.length+' marked periods','Periods');
+  h+=statCard('Periods Missed Today',pM,'att',C.c,pM?'Check classes below':'No missed periods','Periods');
   h+='</div>';
   h+='</div>';
 
@@ -1773,10 +1981,10 @@ function renderTable(){
   }
   h+='<span class="cnt" id="tableCount">'+rows.length+' results</span>';
   // FIXED: Add Add button for relevant tables
-  if(cur==='Students')h+='<button class="btn btn-sm" onclick="cur=\'Admission Form\';q=\'\';gf=\'all\';render();switchTab(\'Admission Form\')" style="background:'+C.g+'">+ Add Student</button>';
+  if(cur==='Students')h+='<button class="btn btn-sm" onclick="cur=\'Admission Form\';q=\'\';gf=\'all\';render();switchTab(\'Admission Form\')" style="background:'+C.g+'">+ Add Student</button> <button class="btn btn-sm" onclick="goTab(&quot;Promote Students&quot;)" style="background:'+C.a+'">&#127891; Promote</button>';
   else if(cur==='Teachers & Staff')h+='<button class="btn btn-sm" onclick="addTeacher()" style="background:'+C.g+'">+ Add Staff</button>';
   else if(cur==='Fees & Payments')h+='<button class="btn btn-sm" onclick="addFeeRecord()" style="background:'+C.g+'">+ Add Payment</button>';
-  else if(cur==='Exam Results')h+='<button class="btn btn-sm" onclick="addExamResult()" style="background:'+C.g+'">+ Add Result</button>';
+  else if(cur==='Exam Results')h+='<button class="btn btn-sm" onclick="window._exLegacy=false;render()" style="background:'+C.g+'">&#8592; Back to DMC marks entry</button>';
   else if(cur==='Attendance')h+='<button class="btn btn-sm" onclick="addAttendanceRecord()" style="background:'+C.g+'">+ Mark Attendance</button>';
   else if(cur==='Timetable')h+='<button class="btn btn-sm" onclick="addTimetableEntry()" style="background:'+C.g+'">+ Add Entry</button>';
   else if(cur==='Classes & Sections')h+='<button class="btn btn-sm" onclick="addClassSection()" style="background:'+C.g+'">+ Add Class</button>';
@@ -1797,6 +2005,7 @@ function renderTable(){
       for(var j=0;j<cs.length;j++)h+='<td>'+cell(cs[j].k,rows[i])+'</td>';
       // FIXED: Edit/Delete buttons for ALL tables
       h+='<td style="white-space:nowrap">';
+      h+=(cur==='Fees & Payments'?feeBtns(i):'');
       h+='<button class="btn-d" onclick="detail('+i+')">Detail</button> ';
       h+='<button class="btn-d" onclick="editRecord('+i+')" style="color:#F5A623">Edit</button> ';
       h+='<button class="btn-d" onclick="deleteRecord('+i+')" style="color:#FF6B6B">Del</button>';
@@ -1845,7 +2054,7 @@ function editRecord(idx){
     h+='<div class="ff"><label>'+k.replace(/_/g,' ')+'</label>';
     if(k==='status'){
       h+='<select name="'+k+'">';
-      var opts=cur==='Students'?['Active','Inactive','Graduated','Transferred']:
+      var opts=cur==='Students'?['Active','Inactive','Graduated','Transferred','Left']:
                cur==='Teachers & Staff'?['Active','On Leave','Retired','Resigned']:
                cur==='Fees & Payments'?['Paid','Pending','Overdue','Partial']:
                cur==='Attendance'?['Present','Absent','Late','Leave']:
@@ -2413,11 +2622,10 @@ function expCSV(){
 }
 
 // ===== TEACHER SALARIES (with edit/delete) =====
-var _salMonth='',_salYear='';
+var _salMonth='',_salYear='',_salView='all';
 function renderTeacherSalaries(){
   var sal=DB['Teacher Salaries']||[];
   var today=new Date();
-  if(!_salMonth)_salMonth=(today.getMonth()+1).toString().padStart(2,'0');
   if(!_salYear)_salYear=today.getFullYear().toString();
   
   var h='<div class="fade"><div class="af" style="max-width:100%">';
@@ -2435,6 +2643,7 @@ function renderTeacherSalaries(){
     h+='<option value="'+mv+'"'+(_salMonth===mv?' selected':'')+'>'+mos[m]+'</option>';
   }
   h+='</select> ';
+  h+='<select class="fs" onchange="_salView=this.value;refreshSalaries()"><option value="all"'+(_salView==='all'?' selected':'')+'>All payments</option><option value="teacher"'+(_salView==='teacher'?' selected':'')+'>By teacher (details)</option></select> ';
   h+='<button class="btn btn-sm" onclick="addSalary()" style="background:'+C.g+'">+ Pay Salary</button> ';
   h+='<button class="btn btn-sm" onclick="salCSV()" style="background:'+C.a+'">'+ico('dload')+' Export</button>';
   h+='</div>';
@@ -2498,6 +2707,27 @@ function refreshSalaries(){
     h+='</div></div>';
   }
   
+  if(_salView==='teacher'){
+    window._salRows=filtered;
+    var groups={},order=[],allStaff=DB['Teachers & Staff']||[],gi,ri;
+    for(gi=0;gi<allStaff.length;gi++){var gn=s(allStaff[gi].name);if(gn&&!groups[gn]){groups[gn]={name:gn,emp:s(allStaff[gi].employee_id),idx:[]};order.push(gn)}}
+    for(ri=0;ri<filtered.length;ri++){var tn2=s(filtered[ri].teacher_name);if(!groups[tn2]){groups[tn2]={name:tn2,emp:s(filtered[ri].employee_id),idx:[]};order.push(tn2)}groups[tn2].idx.push(ri)}
+    order.sort();
+    for(gi=0;gi<order.length;gi++){
+      var g=groups[order[gi]],gtot=0,k;
+      for(k=0;k<g.idx.length;k++)gtot+=n(filtered[g.idx[k]].net_paid);
+      h+='<div class="tw" style="margin-bottom:20px"><div style="padding:14px 16px;border-bottom:1px solid #F0F0F0;display:flex;justify-content:space-between;align-items:center;gap:8px"><div><strong>'+g.name+'</strong> <span style="color:#9B9B9B;font-size:12px">'+g.emp+' &bull; '+g.idx.length+' records</span></div><div style="font-weight:700;color:'+C.g+'">Rs '+f(gtot)+'</div></div>';
+      if(!g.idx.length){h+='<p style="padding:14px 16px;font-size:12px;color:#9B9B9B">No salary recorded for this period</p></div>';continue;}
+      h+='<div class="tsx"><table><thead><tr><th>Paid Date</th><th>Month</th><th>Base</th><th>Bonus</th><th>Ded.</th><th>Net Paid</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+      for(k=0;k<g.idx.length;k++){
+        var sr=filtered[g.idx[k]],ix=g.idx[k];
+        h+='<tr><td>'+s(sr.paid_date)+'</td><td>'+s(sr.month)+'</td><td>Rs '+f(sr.base_salary)+'</td><td>Rs '+f(sr.bonus)+'</td><td>Rs '+f(sr.deductions)+'</td><td><strong style="color:'+C.g+'">Rs '+f(sr.net_paid)+'</strong></td><td>'+badge(sr.status)+'</td>';
+        h+='<td style="white-space:nowrap"><button class="btn-d" onclick="editSalary('+ix+')" style="color:#F5A623">Edit</button> <button class="btn-d" onclick="deleteSalary('+ix+')" style="color:#FF6B6B">Del</button></td></tr>';
+      }
+      h+='</tbody></table></div></div>';
+    }
+    ct.innerHTML=h;return;
+  }
   // Table
   h+='<div class="tw"><div class="tsx"><table><thead><tr><th>Paid Date</th><th>Teacher</th><th>Month</th><th>Base Salary</th><th>Bonus</th><th>Deductions</th><th>Net Paid</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
   if(!filtered.length){
@@ -2525,7 +2755,11 @@ function addSalary(){
   var tchAll=DB['Teachers & Staff']||[];
   for(var i=0;i<tchAll.length;i++)h+='<option value="'+tchAll[i].name+'">'+tchAll[i].name+' ('+s(tchAll[i].employee_id)+')</option>';
   h+='</select></div>';
-  h+='<div class="ff"><label>Month</label><input name="month" placeholder="e.g. August 2026" required></div>';
+  h+='<div class="ff"><label>Month</label><select name="month_name" required>';
+  var mnow=new Date().getMonth();
+  for(var mm=0;mm<12;mm++)h+='<option value="'+mosFull[mm]+'"'+(mm===mnow?' selected':'')+'>'+mosFull[mm]+'</option>';
+  h+='</select></div>';
+  h+='<div class="ff"><label>Year</label><input name="year_num" type="number" value="'+new Date().getFullYear()+'" min="2020" max="2100" required></div>';
   h+='<div class="ff"><label>Base Salary (Rs)</label><input name="base_salary" type="number" placeholder="e.g. 50000" required></div>';
   h+='<div class="ff"><label>Bonus (Rs)</label><input name="bonus" type="number" value="0" placeholder="e.g. 3000"></div>';
   h+='<div class="ff"><label>Deductions (Rs)</label><input name="deductions" type="number" value="0" placeholder="e.g. 1000"></div>';
@@ -2542,16 +2776,21 @@ function saveSalary(e){
   e.preventDefault();
   var f=document.getElementById('salModalForm');
   var inps=f.querySelectorAll('input,select');
-  var rec={id:(DB['Teacher Salaries']||[]).length+1};
+  var rec={id:Date.now()};
   for(var i=0;i<inps.length;i++){var n3=inps[i].name,v3=inps[i].value.trim();if(n3)rec[n3]=v3}
+  if(rec.month_name){rec.month=rec.month_name+' '+(rec.year_num||new Date().getFullYear());}
+  delete rec.month_name;delete rec.year_num;
   rec.net_paid=String(n(rec.base_salary)+n(rec.bonus)-n(rec.deductions));
   var tchAll2=DB['Teachers & Staff']||[];
   for(var i2=0;i2<tchAll2.length;i2++){if(tchAll2[i2].name===rec.teacher_name){rec.employee_id=tchAll2[i2].employee_id;break}}
   if(!DB['Teacher Salaries'])DB['Teacher Salaries']=[];
   DB['Teacher Salaries'].push(rec);
   saveDB();
+  var ym=String(rec.month).match(/(20\d\d)/);if(ym)_salYear=ym[1];
+  _salMonth='';for(var mi=0;mi<12;mi++)if(String(rec.month).indexOf(mosFull[mi])>=0){_salMonth=String(mi+1).padStart(2,'0');break}
   document.getElementById('mo').style.display='none';
-  refreshSalaries();
+  toast('Salary saved \u2713');
+  render();
 }
 
 function editSalary(idx){
@@ -2581,10 +2820,11 @@ function saveSalaryEdit(e,idx){
   var sl=window._salRows[idx];if(!sl)return;
   var f=document.getElementById('salForm');
   var inps=f.querySelectorAll('input,select');
-  for(var i=0;i<inps.length;i++){var n=inps[i].name,v=inps[i].value.trim();if(n && sl.hasOwnProperty(n))sl[n]=v}
+  for(var i=0;i<inps.length;i++){var nm=inps[i].name,v=inps[i].value.trim();if(nm && sl.hasOwnProperty(nm))sl[nm]=v}
   sl.net_paid=String(n(sl.base_salary)+n(sl.bonus)-n(sl.deductions));
   saveDB();
   document.getElementById('mo').style.display='none';
+  toast('Salary updated \u2713');
   refreshSalaries();
 }
 
@@ -2610,189 +2850,8 @@ function salCSV(){
   URL.revokeObjectURL(u);
 }
 
-// ===== TEACHER SALARY DETAILS (all teachers overview) =====
-var _salDetailMonth='';
 var mos=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 var mosFull=['January','February','March','April','May','June','July','August','September','October','November','December'];
-function renderSalaryDetails(){
-  var sal=DB['Teacher Salaries']||[];
-  var today=new Date();
-  if(!_salDetailMonth)_salDetailMonth=(today.getMonth()+1).toString().padStart(2,'0');
-  
-  var teachers={};
-  for(var i=0;i<sal.length;i++){
-    var tn=s(sal[i].teacher_name);
-    if(!teachers[tn])teachers[tn]={name:tn,employee_id:s(sal[i].employee_id),records:[]};
-    teachers[tn].records.push(sal[i]);
-  }
-  var tnames=Object.keys(teachers).sort();
-  
-  var h='<div class="fade"><div class="af" style="max-width:100%">';
-  h+='<h2>📊 Teacher Salary Details</h2>';
-  h+='<p class="sub">Complete salary history grouped by teacher with month filter.</p>';
-  
-  h+='<div class="tbar" style="margin-bottom:20px">';
-  h+='<select class="fs" onchange="_salDetailMonth=this.value;refreshSalaryDetails()"><option value="">All Months</option>';
-  for(var m=0;m<12;m++){
-    var mv=(m+1).toString().padStart(2,'0');
-    h+='<option value="'+mv+'"'+(_salDetailMonth===mv?' selected':'')+'>'+mosFull[m]+'</option>';
-  }
-  h+='</select> ';
-  h+='<span class="cnt">'+tnames.length+' teachers</span>';
-  h+='<button class="btn btn-sm" onclick="exportSalDetailCSV()" style="background:'+C.a+'">'+ico('dload')+' Export All</button>';
-  h+='</div>';
-  h+='<div id="salaryDetailsContent"></div>';
-  h+='</div></div>';
-  
-  setTimeout(function(){refreshSalaryDetails()},50);
-  return h;
-}
-
-function refreshSalaryDetails(){
-  var ct=document.getElementById('salaryDetailsContent');if(!ct)return;
-  var sal=DB['Teacher Salaries']||[];
-  
-  var teachers={};
-  
-  // First, init all active teachers from Teachers & Staff so they always appear (even with 0 salary)
-  var allStaff=DB['Teachers & Staff']||[];
-  for(var i=0;i<allStaff.length;i++){
-    var tn=s(allStaff[i].name);
-    if(!teachers[tn])teachers[tn]={name:tn,employee_id:s(allStaff[i].employee_id),records:[]};
-  }
-  
-  // Then fill in salary records
-  for(var i=0;i<sal.length;i++){
-    var tn=s(sal[i].teacher_name);
-    if(!teachers[tn])teachers[tn]={name:tn,employee_id:s(sal[i].employee_id),records:[]};
-    var rec=sal[i];
-    var keep=true;
-    if(_salDetailMonth && rec.month){
-      var mn2=mosFull[parseInt(_salDetailMonth)-1];
-      if(rec.month.indexOf(mn2)<0)keep=false;
-    }
-    if(keep)teachers[tn].records.push(rec);
-  }
-  
-  var tnames=Object.keys(teachers).sort();
-  if(!tnames.length){ct.innerHTML='<div class="emp"><p>No teachers found</p></div>';return;}
-  
-  var summary={},grandTotal=0;
-  for(var i=0;i<tnames.length;i++){
-    var t=teachers[tnames[i]],total=0;
-    for(var j=0;j<t.records.length;j++)total+=n(t.records[j].net_paid);
-    summary[t.name]=total;grandTotal+=total;
-  }
-  
-  var maxVal=300000;
-  var chartMax=maxVal;
-  
-  var h='<div class="sg" style="margin-bottom:20px">';
-  h+=statCard('Total Paid','Rs '+f(grandTotal),'fee',C.g,tnames.length+' teachers');
-  h+=statCard('Avg/Teacher','Rs '+f(Math.round(grandTotal/tnames.length)),'teacher',C.t,'');
-  h+=statCard('Period',_salDetailMonth?mosFull[parseInt(_salDetailMonth)-1]:'All','cls',C.l,'');
-  h+='</div>';
-  
-  // Bar chart - colorful vibrant gradients
-  var barColors=[
-    'linear-gradient(180deg,#FF6B6B,#EE5A5A)','linear-gradient(180deg,#4ECDC4,#3DBDB5)',
-    'linear-gradient(180deg,#FFD93D,#F0C929)','linear-gradient(180deg,#6C5CE7,#5A4BD1)',
-    'linear-gradient(180deg,#A8E6CF,#88D8B0)','linear-gradient(180deg,#FF8A80,#FF6E63)',
-    'linear-gradient(180deg,#82B1FF,#6A9EFF)','linear-gradient(180deg,#B388FF,#A06CFF)',
-    'linear-gradient(180deg,#FFAB40,#FF9A26)','linear-gradient(180deg,#69F0AE,#4AE08C)',
-    'linear-gradient(180deg,#40C4FF,#2AB4FF)','linear-gradient(180deg,#EA80FC,#D86EF0)'
-  ];
-  h+='<div class="cc" style="margin-bottom:20px"><div class="ct">📊 Total by Teacher</div><div class="bars" style="height:200px">';
-  var si=0;
-  for(var k in summary){
-    if(!summary.hasOwnProperty(k))continue;
-    var hh=Math.round(summary[k]/chartMax*180);
-    if(hh<4)hh=4;
-    var bc=barColors[si%barColors.length];
-    h+='<div class="bc"><div class="bn" style="font-weight:700;color:#333">Rs '+f(summary[k])+'</div><div class="bf" style="height:'+hh+'px;background:'+bc+';border-radius:8px 8px 2px 2px;box-shadow:0 2px 6px rgba(0,0,0,.12)"></div><div class="bl" style="font-size:9px;font-weight:600">'+k.substring(0,14)+'</div></div>';
-    si++;
-  }
-  h+='</div></div>';
-  
-  for(var i=0;i<tnames.length;i++){
-    var t=teachers[tnames[i]];
-    t.records.sort(function(a,b){return (b.paid_date||'').localeCompare(a.paid_date||'')});
-    
-    h+='<div class="tw" style="margin-bottom:20px">';
-    h+='<div style="padding:14px 16px;border-bottom:1px solid #F0F0F0;display:flex;justify-content:space-between;align-items:center">';
-    h+='<div><strong>'+t.name+'</strong> <span style="color:#9B9B9B;font-size:12px">'+s(t.employee_id)+' • '+t.records.length+' records</span></div>';
-    h+='<div style="font-weight:700;color:'+C.g+'">Rs '+f(summary[t.name])+'</div></div>';
-    h+='<div class="tsx"><table><thead><tr><th>Paid Date</th><th>Month</th><th>Base</th><th>Bonus</th><th>Ded.</th><th>Net Paid</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
-    
-    for(var j=0;j<t.records.length;j++){
-      var sr=t.records[j];
-      h+='<tr><td>'+s(sr.paid_date)+'</td><td>'+s(sr.month)+'</td><td>Rs '+f(sr.base_salary)+'</td><td>Rs '+f(sr.bonus)+'</td><td>Rs '+f(sr.deductions)+'</td>';
-      h+='<td><strong style="color:'+C.g+'">Rs '+f(sr.net_paid)+'</strong></td><td>'+badge(sr.status)+'</td>';
-      h+='<td style="white-space:nowrap"><button class="btn-d" onclick="editSalDetail('+i+','+j+')" style="color:#F5A623">Edit</button> ';
-      h+='<button class="btn-d" onclick="deleteSalDetail('+i+','+j+')" style="color:#FF6B6B">Del</button></td></tr>';
-    }
-    h+='</tbody></table></div></div>';
-  }
-  
-  window._sdt=teachers;window._sdn=tnames;
-  ct.innerHTML=h;
-}
-
-function editSalDetail(ti,ri){
-  var t=window._sdt[window._sdn[ti]];if(!t)return;
-  t.records.sort(function(a,b){return (b.paid_date||'').localeCompare(a.paid_date||'')});
-  var sr=t.records[ri];if(!sr)return;
-  
-  var h='<button class="mx" onclick="closem()">&times;</button><h3>Edit Salary - '+t.name+'</h3>';
-  h+='<form id="sdf" onsubmit="saveSalDetail(event,\''+ti+'\','+ri+')" style="max-height:70vh;overflow-y:auto">';
-  h+='<div class="dg" style="grid-template-columns:1fr 1fr;gap:10px">';
-  h+='<div class="ff"><label>Month</label><input name="month" value="'+s(sr.month).replace(/"/g,'&quot;')+'"></div>';
-  h+='<div class="ff"><label>Base Salary</label><input name="base_salary" type="number" value="'+s(sr.base_salary)+'"></div>';
-  h+='<div class="ff"><label>Bonus</label><input name="bonus" type="number" value="'+s(sr.bonus)+'"></div>';
-  h+='<div class="ff"><label>Deductions</label><input name="deductions" type="number" value="'+s(sr.deductions)+'"></div>';
-  h+='<div class="ff"><label>Paid Date</label><input type="date" name="paid_date" value="'+s(sr.paid_date)+'"></div>';
-  h+='<div class="ff"><label>Status</label><select name="status"><option value="Paid"'+(s(sr.status)==='Paid'?' selected':'')+'>Paid</option><option value="Pending"'+(s(sr.status)==='Pending'?' selected':'')+'>Pending</option></select></div>';
-  h+='</div><div style="margin-top:16px;display:flex;gap:12px">';
-  h+='<button type="submit" class="btn-submit">Update</button><button type="button" class="btn-reset" onclick="closem()">Cancel</button></div></form>';
-  document.getElementById('mc').innerHTML=h;document.getElementById('mo').style.display='flex';
-}
-
-function saveSalDetail(e,ti,ri){
-  e.preventDefault();
-  var t=window._sdt[window._sdn[ti]];if(!t)return;
-  t.records.sort(function(a,b){return (b.paid_date||'').localeCompare(a.paid_date||'')});
-  var sr=t.records[ri];if(!sr)return;
-  var f=document.getElementById('sdf');
-  var inps=f.querySelectorAll('input,select');
-  for(var i=0;i<inps.length;i++){var n2=inps[i].name,v2=inps[i].value.trim();if(n2 && sr.hasOwnProperty(n2))sr[n2]=v2}
-  sr.net_paid=String(n(sr.base_salary)+n(sr.bonus)-n(sr.deductions));
-  saveDB();
-  document.getElementById('mo').style.display='none';
-  refreshSalaryDetails();
-}
-
-function deleteSalDetail(ti,ri){
-  var t=window._sdt[window._sdn[ti]];if(!t)return;
-  t.records.sort(function(a,b){return (b.paid_date||'').localeCompare(a.paid_date||'')});
-  var sr=t.records[ri];if(!sr)return;
-  if(!confirm('Delete salary of Rs '+f(sr.net_paid)+' for '+t.name+'?'))return;
-  var list=DB['Teacher Salaries']||[];
-  // Remove by matching record (try by id first, then by reference)
-  for(var i=list.length-1;i>=0;i--){
-    if((sr.id && list[i].id===sr.id) || list[i]===sr){list.splice(i,1);break}
-  }
-  saveDB();
-  refreshSalaryDetails();
-}
-
-function exportSalDetailCSV(){
-  var sal=DB['Teacher Salaries']||[];if(!sal.length)return;
-  var csv='\uFEFFTeacher,Emp ID,Month,Base,Bonus,Deductions,Net Paid,Status,Paid Date\n';
-  sal.forEach(function(r){csv+=s(r.teacher_name)+','+s(r.employee_id)+','+s(r.month)+','+s(r.base_salary)+','+s(r.bonus)+','+s(r.deductions)+','+s(r.net_paid)+','+s(r.status)+','+s(r.paid_date)+'\n'});
-  var b=new Blob([csv],{type:'text/csv;charset=utf-8'});
-  var u=URL.createObjectURL(b);var a=document.createElement('a');a.href=u;
-  a.download='Salary_Details.csv';a.click();URL.revokeObjectURL(u);
-}
 
 // ===== UNIVERSAL PRINT =====
 function printPage(){
@@ -3025,6 +3084,7 @@ var STATIONERY_CLASSES=['Nursery','LKG','UKG','KG','1','2','3','4','5','6','7','
 var S_FILTER='all', S_CLASS='all', S_Q='';
 
 function renderStationery(){
+  window._sbP={};window._sbEdited={};
   var records=DB['Stationery']||[];
   // Stats
   var totalStudents=0, totalAmount=0, totalPaid=0, totalPending=0, totalRemaining=0;
@@ -3067,18 +3127,21 @@ function renderStationery(){
   h+='<div class="ff"><label>Student Name *</label>';
   h+='<select id="sb_student_pick" onchange="var v=this.value;if(v)document.getElementById(\'sb_name\').value=v"><option value="">-- Pick from class --</option></select><br>';
   h+='<input id="sb_name" required placeholder="Or type name" style="margin-top:6px"></div>';
-  // Subject dropdown
-  h+='<div class="ff"><label>Subject / Book *</label><select id="sb_subject" required><option value="">Select</option>';
+  // Subject dropdown (multi-select)
+  h+='<div class="msdw" style="grid-column:1/-1"><div class="msd-lab">Books / Subjects * (select one or many)</div>';
+  h+='<div class="msd" id="sbMsd"><button type="button" class="msd-btn" onclick="sbToggleDD(event)"><span id="sbMsdLbl">Select books...</span><span>&#9662;</span></button>';
+  h+='<div class="msd-panel" id="sbMsdPanel"><div class="msd-top"><button type="button" onclick="sbSelAll(true)">Select all</button><button type="button" onclick="sbSelAll(false)">Clear</button></div>';
   for(var i=0;i<STATIONERY_SUBJECTS.length;i++){
-    h+='<option value="'+STATIONERY_SUBJECTS[i]+'">'+STATIONERY_SUBJECTS[i]+'</option>';
+    var sbv=STATIONERY_SUBJECTS[i].replace(/&/g,'&amp;');
+    h+='<label class="msd-item"><input type="checkbox" class="sb_chk" value="'+sbv+'" onchange="sbSync()"><span>'+sbv+'</span></label>';
   }
-  h+='</select></div>';
+  h+='</div></div><div id="sbPriceList"></div></div>';
   // Item type
   h+='<div class="ff"><label>Item Type</label><select id="sb_type"><option value="Textbook">Textbook</option><option value="Notebook">Notebook</option><option value="Both">Book + Notebook</option><option value="Guide">Guide Book</option><option value="Other">Other</option></select></div>';
   // Price
-  h+='<div class="ff"><label>Price (Rs) *</label><input type="number" id="sb_price" required placeholder="e.g. 350" min="0" step="1"></div>';
+  h+='<div class="ff"><label>Price per book (Rs)</label><input type="number" id="sb_price" placeholder="Fills all selected books" min="0" step="1" oninput="sbDefaultChanged()"></div>';
   // Amount paid
-  h+='<div class="ff"><label>Amount Paid (Rs)</label><input type="number" id="sb_paid" placeholder="e.g. 200" min="0" step="1" value="0"></div>';
+  h+='<div class="ff"><label>Total Amount Paid (Rs)</label><input type="number" id="sb_paid" placeholder="e.g. 200" min="0" step="1" value="0"></div>';
   // Given date
   h+='<div class="ff"><label>Given Date</label><input type="date" id="sb_given_date" value="'+new Date().toISOString().split('T')[0]+'"></div>';
   // Notes
@@ -3165,26 +3228,26 @@ function addStationery(e){
   e.preventDefault();
   var cl=document.getElementById('sb_class').value;
   var name=document.getElementById('sb_name').value.trim();
-  var subject=document.getElementById('sb_subject').value;
   var itype=document.getElementById('sb_type').value;
-  var price=n(document.getElementById('sb_price').value);
   var paid=n(document.getElementById('sb_paid').value);
   var givenDate=document.getElementById('sb_given_date').value;
   var notes=document.getElementById('sb_notes').value.trim();
-  if(!cl||!name||!subject||price<=0){alert('Please fill all required fields (Class, Name, Subject, Price)');return;}
-  var rec={
-    id:Date.now(),
-    grade:cl,
-    student_name:name,
-    subject:subject,
-    item_type:itype,
-    price:price,
-    amount_paid:paid,
-    given_date:givenDate,
-    notes:notes,
-    saved_at:new Date().toISOString().split('T')[0]
-  };
-  DB['Stationery'].push(rec);
+  var chks=document.querySelectorAll('.sb_chk:checked');
+  if(!cl||!name){alert('Please select Class and Student Name');return;}
+  if(!chks.length){alert('Please select at least one book');return;}
+  var pins=document.querySelectorAll('.sb_p'),priceMap={},i;
+  for(i=0;i<pins.length;i++)priceMap[pins[i].getAttribute('data-subj')]=n(pins[i].value);
+  var recs=[],total=0,stamp=Date.now();
+  for(i=0;i<chks.length;i++){
+    var sub=chks[i].value,pr=priceMap[sub]||0;
+    if(pr<=0){alert('Please enter a price for '+sub);return;}
+    total+=pr;
+    recs.push({id:stamp+i,grade:cl,student_name:name,subject:sub,item_type:itype,price:pr,amount_paid:0,given_date:givenDate,notes:notes,saved_at:new Date().toISOString().split('T')[0]});
+  }
+  if(paid>total){alert('Amount paid (Rs '+f(paid)+') is more than the total price (Rs '+f(total)+')');return;}
+  var left=paid;
+  for(i=0;i<recs.length;i++){var take=Math.min(left,recs[i].price);recs[i].amount_paid=take;left-=take;}
+  for(i=0;i<recs.length;i++)DB['Stationery'].push(recs[i]);
   saveDB(); render();
 }
 
@@ -3321,7 +3384,7 @@ function printStationeryReport(){
 function saveDB(){
   try{localStorage.setItem('uphs_db',JSON.stringify(DB))}catch(e){alert('Storage full! Please export data.')}
   document.getElementById('hs').textContent=DB['Students'].length+' students  |  '+DB['Teachers & Staff'].length+' staff  |  9 modules';
-  if(window.uphsSync)uphsSync.changed();
+  try{if(window.uphsSync)uphsSync.changed();}catch(e){console.warn('Cloud sync failed, data is saved on this device',e)}
 }
 
 // ===== EXPORT CSV =====
@@ -3587,6 +3650,7 @@ function perDelSubject(i){
 
 function render(){
   var pg=document.getElementById('page');
+  if(cur!=='Exam Results')window._exLegacy=false;
   if(cur==='Overview')pg.innerHTML=renderOverview();
   else if(cur==='Admission Form')pg.innerHTML=renderAdmissionForm();
   else if(cur==='Daily Attendance')pg.innerHTML=renderDailyAttendance();
@@ -3594,9 +3658,13 @@ function render(){
   else if(cur==='Attendance Records')pg.innerHTML=renderAttRecords();
   else if(cur==='Monthly Expenses')pg.innerHTML=renderExpenses();
   else if(cur==='Teacher Salaries')pg.innerHTML=renderTeacherSalaries();
-  else if(cur==='Salary Details')pg.innerHTML=renderSalaryDetails();
+  else if(cur==='Timetable')pg.innerHTML=renderPeriodTimetable();
+  else if(cur==='Promote Students')pg.innerHTML=renderPromote();
   else if(cur==='Student Categories')pg.innerHTML=renderCategories();
   else if(cur==='Stationery & Books')pg.innerHTML=renderStationery();
+  else if(cur==='Exam Results'&&!window._exLegacy)pg.innerHTML=renderExam();
+  else if(cur==='Student Cards')pg.innerHTML=renderCards();
+  else if(cur==='Leaving Certificate')pg.innerHTML=renderLeaving();
   else pg.innerHTML=renderTable();
   
   // Updated header count
@@ -3624,6 +3692,7 @@ function filterTable(){
       h+='<tr>';
       for(var j=0;j<cs.length;j++)h+='<td>'+cell(cs[j].k,rows[i])+'</td>';
       h+='<td style="white-space:nowrap">';
+      h+=(cur==='Fees & Payments'?feeBtns(i):'');
       h+='<button class="btn-d" onclick="detail('+i+')">Detail</button> ';
       h+='<button class="btn-d" onclick="editRecord('+i+')" style="color:#F5A623">Edit</button> ';
       h+='<button class="btn-d" onclick="deleteRecord('+i+')" style="color:#FF6B6B">Del</button>';
@@ -3656,6 +3725,8 @@ function renderDailyAttendance(){
   h+='<button class="btn btn-sm" onclick="markAllAtt(\'Absent\')" style="background:'+C.c+'" type="button">All Absent</button> ';
   h+='<button class="btn btn-sm btn-submit" onclick="saveDailyAtt()" type="button">💾 Save Attendance</button> ';
   h+='<button class="btn btn-sm" onclick="addBlankAttName()" style="background:#A78BFA;color:#fff" type="button">➕ Add Student Name</button>';
+  h+=' <button class="btn btn-sm" onclick="waFromTable()" style="background:#16A34A;color:#fff" type="button">&#128172; WhatsApp Absentees</button>';
+  h+=' <label style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#6B6B6B;cursor:pointer"><input type="checkbox" '+(waAutoOn()?'checked':'')+' onchange="waAutoSet(this.checked)"> Auto-open WhatsApp after saving</label>';
   h+='</div>';
   h+='<div id="daily-att-table"></div>';
   h+='<div class="success-box" id="attSuccessBox"><div class="chk">&#10003;</div><div class="msg" id="attSuccessMsg"></div></div>';
@@ -3700,6 +3771,8 @@ function loadDailyAtt(){
   }
   h+="</tbody></table></div></div>";
   container.innerHTML=h;
+  container.onchange=function(e){var tg=e.target;if(tg&&tg.type==='radio')syncAbsFlags()};
+  syncAbsFlags();
 }
 
 // Helper: move focus between cells in attendance row  
@@ -3718,7 +3791,7 @@ function moveAttCell2(el,rowIdx){
   for(var i=0;i<allInputs.length;i++){if(allInputs[i]===el){pos=i;break}}
   if(pos>=0 && pos<allInputs.length-1){
     allInputs[pos+1].focus();
-    if(allInputs[pos+1].type==='radio')allInputs[pos+1].checked=true;
+    if(allInputs[pos+1].type==='radio'){allInputs[pos+1].checked=true;syncAbsFlags();}
   }else if(rowIdx+1<rows.length){
     var nextName=rows[rowIdx+1].querySelector('.da-name');
     if(nextName)nextName.focus();
@@ -3730,11 +3803,12 @@ function saveDailyAtt(){
   if(!_attClass)return;
   var grade=_attClass;
   var nameInputs=document.querySelectorAll('.da-name');
-  var count=0, newStudents=0;
+  var count=0, newStudents=0, absent=[];
   for(var i=0;i<nameInputs.length;i++){
     var name=nameInputs[i].value.trim();
     if(!name)continue;
     var status=getRadioVal('da-'+i)||'Present';
+    if(status==='Absent')absent.push(name);
     var remEl=document.querySelector('.da-rem[data-idx="'+i+'"]');
     var remarks=remEl?remEl.value:'';
     // Save attendance
@@ -3760,6 +3834,7 @@ function saveDailyAtt(){
   var msg='Attendance saved for '+grade+' on '+_attDate+'! ('+count+' records)';
   if(newStudents>0)msg+=' '+newStudents+' new student(s) added to database.';
   if(box){document.getElementById('attSuccessMsg').textContent=msg;box.style.display='block';setTimeout(function(){box.style.display='none'},4000);}
+  if(absent.length&&waAutoOn())waOpen(grade,_attDate,absent);
 }
 
 function getRadioVal(name){
@@ -3808,6 +3883,393 @@ function markAllAtt(status){
     var radios=document.getElementsByName('da-'+i);
     for(var j=0;j<radios.length;j++)if(radios[j].value===status)radios[j].checked=true;
   }
+  syncAbsFlags();
+}
+
+
+// ===== THEMES =====
+var THEMES=[
+ {id:'violet',n:'Violet',g:'linear-gradient(135deg,#7C3AED,#A78BFA)',m:'#7C3AED'},
+ {id:'ocean',n:'Ocean',g:'linear-gradient(135deg,#0369A1,#38BDF8)',m:'#0284C7'},
+ {id:'forest',n:'Forest',g:'linear-gradient(135deg,#15803D,#4ADE80)',m:'#16A34A'},
+ {id:'sunset',n:'Sunset',g:'linear-gradient(135deg,#EA580C,#FBBF24)',m:'#F97316'},
+ {id:'rose',n:'Rose',g:'linear-gradient(135deg,#BE123C,#FB7185)',m:'#E11D48'},
+ {id:'dark',n:'Dark',g:'linear-gradient(135deg,#0F172A,#64748B)',m:'#0B1220'}
+];
+function savedTheme(){try{return localStorage.getItem('uphs_theme')||'violet'}catch(e){return 'violet'}}
+function buildThemePicker(){
+  var pop=document.getElementById('themePop');if(!pop)return;
+  var h='<div class="thm-t">Choose theme</div>';
+  for(var i=0;i<THEMES.length;i++)h+='<button type="button" class="thm" data-id="'+THEMES[i].id+'" onclick="applyTheme(\''+THEMES[i].id+'\')"><i style="background:'+THEMES[i].g+'"></i>'+THEMES[i].n+'</button>';
+  pop.innerHTML=h;
+}
+function applyTheme(id){
+  var meta='#7C3AED',ok=false,i;
+  for(i=0;i<THEMES.length;i++)if(THEMES[i].id===id){ok=true;meta=THEMES[i].m}
+  if(!ok)id='violet';
+  document.body.setAttribute('data-theme',id);
+  try{localStorage.setItem('uphs_theme',id)}catch(e){}
+  var mt=document.querySelector('meta[name="theme-color"]');if(mt)mt.setAttribute('content',meta);
+  var bs=document.querySelectorAll('.thm');
+  for(i=0;i<bs.length;i++)bs[i].classList.toggle('on',bs[i].getAttribute('data-id')===id);
+  var pop=document.getElementById('themePop');if(pop)pop.classList.remove('open');
+}
+function toggleThemePop(ev){ev.stopPropagation();var p=document.getElementById('themePop');if(p)p.classList.toggle('open')}
+document.addEventListener('click',function(e){
+  var p=document.getElementById('themePop');
+  if(p&&p.classList.contains('open')&&!e.target.closest('#themeWrap'))p.classList.remove('open');
+  var d=document.getElementById('sbMsdPanel');
+  if(d&&d.classList.contains('open')&&!e.target.closest('#sbMsd'))d.classList.remove('open');
+});
+
+// ===== OVERVIEW CARD -> RELATED DATA =====
+function goTab(t){
+  cur=t;q='';gf='all';
+  var bs=document.querySelectorAll('#tabs button.tb'),ac=null;
+  for(var i=0;i<bs.length;i++){var on=bs[i].textContent===t;bs[i].className='tb'+(on?' ac':'');if(on)ac=bs[i];}
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(ac&&ac.scrollIntoView)ac.scrollIntoView({inline:'center',block:'nearest'});
+}
+
+// ===== WHATSAPP FOR ABSENT STUDENTS =====
+var WA_CC='92'; // country code added to numbers starting with 0 (92 = Pakistan)
+var WA_DEF_TPL='Assalam-o-Alaikum {parent},\n\nYour child {name} ({class}) was ABSENT from Universal Public High School on {date}.\n\nPlease inform us of the reason.\n\nThank you,\nUniversal Public High School';
+function waTpl(){try{return localStorage.getItem('uphs_wa_tpl')||WA_DEF_TPL}catch(e){return WA_DEF_TPL}}
+function waSaveTpl(v){try{localStorage.setItem('uphs_wa_tpl',v)}catch(e){}}
+function waAutoOn(){try{return localStorage.getItem('uphs_wa_auto')!=='0'}catch(e){return true}}
+function waAutoSet(on){try{localStorage.setItem('uphs_wa_auto',on?'1':'0')}catch(e){}}
+function waEsc(x){return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function waPhone(p){
+  var d=String(p||'').replace(/\D/g,'');
+  if(!d)return '';
+  if(d.indexOf('00')===0)d=d.slice(2);
+  else if(d.charAt(0)==='0')d=WA_CC+d.slice(1);
+  else if(d.length===10&&d.charAt(0)==='3')d=WA_CC+d;
+  return d.length>=10?d:'';
+}
+function waFindStudent(name,grade){
+  var nm=String(name||'').trim().toLowerCase(),byName=null;
+  for(var i=0;i<DB['Students'].length;i++){
+    var st=DB['Students'][i];
+    if(String(st.name||'').trim().toLowerCase()===nm){
+      if(String(st.grade)===String(grade))return st;
+      if(!byName)byName=st;
+    }
+  }
+  return byName;
+}
+function waMsg(tpl,it,st){
+  var parent=(st&&st.parent_name)?st.parent_name:'Parent';
+  return tpl.replace(/\{name\}/g,it.name).replace(/\{class\}/g,classLabel(it.grade)).replace(/\{date\}/g,it.date).replace(/\{parent\}/g,parent);
+}
+function waOpen(grade,date,names){
+  var list=[],i;
+  for(i=0;i<names.length;i++){
+    var nm=String(names[i]||'').trim();if(!nm)continue;
+    var st=waFindStudent(nm,grade);
+    list.push({name:nm,grade:grade,date:date,phone:st?(st.parent_phone||''):'',sent:false});
+  }
+  if(!list.length)return;
+  window._waList=list;
+  var h='<button class="mx" onclick="closem()">&times;</button><h3>&#128172; WhatsApp parents of absent students</h3>';
+  h+='<p style="font-size:12px;color:#6B6B6B;margin-bottom:12px">'+classLabel(grade)+' &middot; '+date+' &middot; '+list.length+' absent. Tap <b>Send</b>: WhatsApp opens with the message ready, then press send there.</p>';
+  h+='<div class="ff" style="margin-bottom:12px"><label>Message (use {name} {class} {date} {parent})</label><textarea id="waTpl" rows="6" oninput="waSaveTpl(this.value)">'+waEsc(waTpl())+'</textarea></div>';
+  for(i=0;i<list.length;i++){
+    h+='<div class="wa-line" id="waLine'+i+'"><div class="wa-nm">'+waEsc(list[i].name)+'</div><input type="tel" id="waPh'+i+'" value="'+waEsc(list[i].phone)+'" placeholder="03XX XXXXXXX"><button type="button" class="wa-send" onclick="waSend('+i+')">Send</button></div>';
+  }
+  h+='<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap"><button class="btn-submit" type="button" onclick="waNext()">Send to next &#9654;</button><button class="btn-reset" type="button" onclick="closem()">Close</button></div>';
+  document.getElementById('mc').innerHTML=h;
+  document.getElementById('mo').style.display='flex';
+}
+function waSend(i){
+  var it=(window._waList||[])[i];if(!it)return;
+  var inp=document.getElementById('waPh'+i),raw=inp?inp.value.trim():'',ph=waPhone(raw);
+  if(!ph){alert('Please enter a valid parent phone number for '+it.name);if(inp)inp.focus();return;}
+  var st=waFindStudent(it.name,it.grade);
+  if(st&&raw&&String(st.parent_phone||'')!==raw){st.parent_phone=raw;saveDB();}
+  var tpl=document.getElementById('waTpl').value||WA_DEF_TPL;
+  window.open('https://wa.me/'+ph+'?text='+encodeURIComponent(waMsg(tpl,it,st)),'_blank');
+  it.sent=true;
+  var b=document.querySelector('#waLine'+i+' .wa-send');
+  if(b){b.textContent='Sent \u2713';b.className='wa-send done';}
+}
+function waNext(){
+  var l=window._waList||[];
+  for(var i=0;i<l.length;i++)if(!l[i].sent){waSend(i);return;}
+  alert('Messages already opened for all absent students.');
+}
+function waFromTable(){
+  if(!_attClass){alert('Select a class first');return;}
+  var rows=document.querySelectorAll('#dailyAttTable tbody tr'),names=[];
+  for(var i=0;i<rows.length;i++){
+    var inp=rows[i].querySelector('.da-name');
+    if(inp&&inp.value.trim()&&getRadioVal('da-'+i)==='Absent')names.push(inp.value.trim());
+  }
+  if(!names.length){alert('No absent students are marked yet.');return;}
+  waOpen(_attClass,_attDate,names);
+}
+function waOneRow(btn){
+  var tr=btn.closest('tr'),inp=tr?tr.querySelector('.da-name'):null;
+  if(inp&&inp.value.trim())waOpen(_attClass,_attDate,[inp.value.trim()]);
+}
+function syncAbsFlags(){
+  var rows=document.querySelectorAll('#dailyAttTable tbody tr');
+  for(var i=0;i<rows.length;i++){
+    var tr=rows[i],last=tr.lastElementChild;
+    if(last&&!last.querySelector('.wa-row')){
+      var b=document.createElement('button');b.type='button';b.className='wa-row';b.title='WhatsApp parent';b.innerHTML='&#128172;';b.setAttribute('onclick','waOneRow(this)');
+      last.insertBefore(b,last.firstChild);
+    }
+    tr.classList.toggle('is-abs',getRadioVal('da-'+i)==='Absent');
+  }
+}
+
+// ===== STATIONERY: MULTI-SELECT BOOKS =====
+function sbToggleDD(ev){ev.stopPropagation();var p=document.getElementById('sbMsdPanel');if(p)p.classList.toggle('open')}
+function sbSelAll(on){
+  var c=document.querySelectorAll('.sb_chk');
+  for(var i=0;i<c.length;i++)c[i].checked=on;
+  sbSync();
+}
+function sbSync(){
+  var c=document.querySelectorAll('.sb_chk:checked'),lbl=document.getElementById('sbMsdLbl'),box=document.getElementById('sbPriceList'),i;
+  if(!lbl||!box)return;
+  var names=[];for(i=0;i<c.length;i++)names.push(c[i].value);
+  lbl.innerHTML=!names.length?'Select books...':(names.length<=2?names.join(', '):names.length+' books selected');
+  var def=document.getElementById('sb_price').value,h='';
+  for(i=0;i<names.length;i++){
+    var v=window._sbP[names[i]];if(v===undefined)v=def;
+    h+='<div class="pl-row"><span>'+names[i]+'</span><input type="number" class="sb_p" min="0" step="1" placeholder="Price" data-subj="'+names[i]+'" value="'+(v||'')+'" oninput="sbPriceInput(this)"></div>';
+  }
+  if(names.length)h+='<div id="sbTotal"></div>';
+  box.innerHTML=h;sbTotal();
+}
+function sbPriceInput(el){var k=el.getAttribute('data-subj');window._sbP[k]=el.value;window._sbEdited[k]=true;sbTotal()}
+function sbDefaultChanged(){
+  var def=document.getElementById('sb_price').value,c=document.querySelectorAll('.sb_chk:checked');
+  for(var i=0;i<c.length;i++)if(!window._sbEdited[c[i].value])window._sbP[c[i].value]=def;
+  sbSync();
+}
+function sbTotal(){
+  var el=document.getElementById('sbTotal');if(!el)return;
+  var p=document.querySelectorAll('.sb_p'),sum=0;
+  for(var i=0;i<p.length;i++)sum+=n(p[i].value);
+  el.textContent=p.length+' book(s) \u00b7 Total: Rs '+f(sum);
+}
+
+
+// ===== TOAST + SAVE SAFETY NET =====
+function toast(msg){
+  var el=document.getElementById('toastBox');
+  if(!el){el=document.createElement('div');el.id='toastBox';document.body.appendChild(el)}
+  el.textContent=msg;el.className='on';
+  clearTimeout(window._toastT);window._toastT=setTimeout(function(){el.className=''},2600);
+}
+['saveSalary','saveSalaryEdit'].forEach(function(nm){
+  var orig=window[nm];if(typeof orig!=='function')return;
+  window[nm]=function(e){
+    try{if(e&&e.preventDefault)e.preventDefault();return orig.apply(this,arguments)}
+    catch(err){console.error(err);alert('Could not save: '+(err&&err.message?err.message:err))}
+  };
+});
+
+// ===== PROMOTE STUDENTS =====
+var PM_GRADES=['Nursery','LKG','UKG','KG','1','2','3','4','5','6','7','8','9','10'];
+var _pmFrom='',_pmTo='',_pmSec='';
+function pmNext(g){var i=PM_GRADES.indexOf(String(g));if(i<0)return '';return i+1<PM_GRADES.length?PM_GRADES[i+1]:'Graduated'}
+function pmToLabel(g){return g==='Graduated'?'Graduated (passed out)':classLabel(g)}
+function renderPromote(){
+  DB['PromotionLog']=DB['PromotionLog']||[];
+  var i,h='<div class="fade"><div class="af" style="max-width:100%">';
+  h+='<h2>&#127891; Promote Students</h2><p class="sub">Move students to the next class when the session ends. Past promotions can be undone from the history below.</p>';
+  h+='<div class="tbar" style="margin-bottom:16px">';
+  h+='<select class="fs" onchange="_pmFrom=this.value;_pmTo=pmNext(_pmFrom);render()"><option value="">From class...</option>';
+  for(i=0;i<PM_GRADES.length;i++)h+='<option value="'+PM_GRADES[i]+'"'+(_pmFrom===PM_GRADES[i]?' selected':'')+'>'+classLabel(PM_GRADES[i])+'</option>';
+  h+='</select><span class="cnt">&#10142;</span>';
+  h+='<select class="fs" onchange="_pmTo=this.value"><option value="">To class...</option>';
+  for(i=0;i<PM_GRADES.length;i++)h+='<option value="'+PM_GRADES[i]+'"'+(_pmTo===PM_GRADES[i]?' selected':'')+'>'+classLabel(PM_GRADES[i])+'</option>';
+  h+='<option value="Graduated"'+(_pmTo==='Graduated'?' selected':'')+'>Graduated (passed out)</option></select>';
+  h+='<input class="fs" style="width:170px" placeholder="New section (optional)" value="'+waEsc(_pmSec)+'" oninput="_pmSec=this.value">';
+  h+='</div>';
+  var list=[];
+  if(_pmFrom){
+    for(i=0;i<DB['Students'].length;i++){var st=DB['Students'][i];if(String(st.grade)===String(_pmFrom)&&st.status==='Active')list.push(i)}
+  }
+  if(!_pmFrom){h+='<div class="tw"><div class="emp"><p>Select the class to promote from</p></div></div>';}
+  else if(!list.length){h+='<div class="tw"><div class="emp"><p>No active students in '+classLabel(_pmFrom)+'</p></div></div>';}
+  else{
+    h+='<div class="tw"><div class="tsx"><table><thead><tr><th style="width:36px"><input type="checkbox" checked onchange="pmToggleAll(this.checked)"></th><th>Adm No</th><th>Name</th><th>Section</th><th>Parent Phone</th></tr></thead><tbody>';
+    for(i=0;i<list.length;i++){var sd=DB['Students'][list[i]];
+      h+='<tr><td><input type="checkbox" class="pm_chk" data-i="'+list[i]+'" checked></td><td>'+waEsc(sd.admission_no)+'</td><td style="font-weight:500">'+waEsc(sd.name)+'</td><td>'+(waEsc(sd.section)||'--')+'</td><td>'+(waEsc(sd.parent_phone)||'--')+'</td></tr>';
+    }
+    h+='</tbody></table></div></div>';
+    h+='<div style="margin-top:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" type="button" onclick="pmDo()">Promote selected &#9654;</button><span class="cnt">'+list.length+' active students. Untick any student who should stay (held back).</span></div>';
+  }
+  var log=DB['PromotionLog'];
+  if(log.length){
+    h+='<div class="cc" style="margin-top:24px"><div class="ct">&#128337; Promotion history</div><div class="tsx"><table><thead><tr><th>Date</th><th>From</th><th>To</th><th>Students</th><th></th></tr></thead><tbody>';
+    for(i=0;i<Math.min(log.length,10);i++)h+='<tr><td>'+log[i].date+'</td><td>'+classLabel(log[i].from)+'</td><td>'+pmToLabel(log[i].to)+'</td><td>'+log[i].count+'</td><td><button class="btn-d" style="color:#FF6B6B" onclick="pmUndo('+i+')">Undo</button></td></tr>';
+    h+='</tbody></table></div></div>';
+  }
+  return h+'</div></div>';
+}
+function pmToggleAll(on){var c=document.querySelectorAll('.pm_chk');for(var i=0;i<c.length;i++)c[i].checked=on}
+function pmDo(){
+  if(!_pmFrom){alert('Select the class to promote from');return}
+  if(!_pmTo){alert('Select the class to promote to');return}
+  if(String(_pmTo)===String(_pmFrom)){alert('The "To" class must be different from the "From" class');return}
+  var chks=document.querySelectorAll('.pm_chk:checked');
+  if(!chks.length){alert('Select at least one student');return}
+  if(!confirm('Promote '+chks.length+' student(s) from '+classLabel(_pmFrom)+' to '+pmToLabel(_pmTo)+'?'))return;
+  var sec=(_pmSec||'').trim(),today=new Date().toISOString().split('T')[0],items=[];
+  for(var i=0;i<chks.length;i++){
+    var st=DB['Students'][parseInt(chks[i].getAttribute('data-i'),10)];if(!st)continue;
+    items.push({adm:st.admission_no||'',name:st.name,id:st.id,grade:st.grade,section:st.section||'',status:st.status});
+    if(_pmTo==='Graduated'){st.status='Graduated'}else{st.grade=_pmTo;if(sec)st.section=sec}
+    st.promotions=st.promotions||[];st.promotions.push({date:today,from:_pmFrom,to:_pmTo});
+  }
+  DB['PromotionLog'].unshift({id:Date.now(),date:today,from:_pmFrom,to:_pmTo,count:items.length,items:items});
+  saveDB();toast(items.length+' student(s) promoted \u2713');render();
+}
+function pmUndo(idx){
+  var lg=DB['PromotionLog'][idx];if(!lg)return;
+  if(!confirm('Undo this promotion ('+lg.count+' students, '+classLabel(lg.from)+' to '+pmToLabel(lg.to)+')?'))return;
+  for(var i=0;i<lg.items.length;i++){
+    var it=lg.items[i],st=null;
+    for(var j=0;j<DB['Students'].length;j++){var c=DB['Students'][j];
+      if((it.adm&&c.admission_no===it.adm)||(!it.adm&&c.name===it.name&&c.id===it.id)){st=c;break}}
+    if(!st)continue;
+    st.grade=it.grade;st.section=it.section;st.status=it.status;
+    if(st.promotions&&st.promotions.length)st.promotions.pop();
+  }
+  DB['PromotionLog'].splice(idx,1);
+  saveDB();toast('Promotion undone');render();
+}
+
+
+// ===== TEACHERS PERIOD TIME TABLE (matches the school's paper timetable) =====
+var PT_PERIODS=['1st Period','2nd Period','3rd Period','4th Period','5th Period','6th Period','7th Period'];
+var _ptI=0,_ptJ=0,_ptClash=true;
+function ptSeed(){
+  var raw=[
+   ['1st Class','1','Eng|Ayub','Maths|Sameer','Urdu|Shafiq','ISL|Ataullah','General|Shafiq','P.Study|Ataullah','Science|Waqas'],
+   ['2nd Class','2','English|Shafiq','Urdu|Ataullah','Maths|Sameer','P.Study|Shoaib','ISL|Sameer','Science|Waqas','General|Ataullah'],
+   ['3rd Class','3','Science|Waqas','P.Study|Ataullah Maulana','English|Ayub','Maths|Sameer','ISL|Ataullah','Urdu|Sameer','General|Ayub'],
+   ['4th Class','4','Urdu|Lal Rehman','Science|Ayub','English|Ahmad','Grammar|Shah Fahad','P.Study|Ayub','Maths|Ahmad','ISL|Sameer'],
+   ['5th Class','5','ISL|Ataullah','Maths|Ahmad Khan','Science|Waqas','Eng Grammar|Ayub','Urdu|Lal Rehman','Eng|Ashnail','P.Study|Sanaullah'],
+   ['6th Class','6','ISL|Ataullah Maulana','Science|Shah Fahad','Urdu|Lal Rehman','Eng|Ashnail','Grammar|Shah Fahad','Maths|Sanaullah','History|Shoaib'],
+   ['7th Class','7','Maths|Sanaullah','Urdu|Lal Rehman','Science|Shah Fahad','ISL|Ataullah Maulana','Eng|Ashnail','History|Shoaib','Grammar|Ahmad'],
+   ['8th Class','8','Biology|Shah Fahad','Eng|Ashnail','Math|Sanaullah','Chem|Shoaib','Phy|Ahmad','Urdu|Lal Rehman','ISL|Ataullah Maulana'],
+   ['9th Class','9','Physics|Ahmad','Urdu|Muslim','Eng|Ashnail','Maths|Sanaullah','Chem|Shoaib','ISL|Ataullah Maulana','Biology|Shah Fahad'],
+   ['10th Class','10','Urdu|Muslim','Chem|Shoaib','ISL|Ataullah Maulana','Physics|Ahmad Khan','Maths|Sanaullah','Biology|Shah Fahad','Eng|Ashnail'],
+   ['K.G Class','KG','Eng|Shoaib','Writing|Shoaib','Urdu|Ataullah','Writing|Waqas','Naz.|Shoaib','Maths|Ayub','Writing|Shoaib'],
+   ['N.S Class','Nursery','Eng|Sameer','Writing|Waqas','Maths|Shoaib','Writing|Ayub','General|Waqas','Urdu|Shoaib','Writing|Sameer']
+  ],out=[],i,j;
+  for(i=0;i<raw.length;i++){
+    var cells=[];
+    for(j=2;j<9;j++){var pr=raw[i][j].split('|');cells.push({s:pr[0],t:pr[1]})}
+    out.push({id:i+1,label:raw[i][0],grade:raw[i][1],cells:cells});
+  }
+  return out;
+}
+function ptEnsure(){if(!DB['PeriodTimetable']||!DB['PeriodTimetable'].length)DB['PeriodTimetable']=ptSeed();return DB['PeriodTimetable']}
+function ptClashMap(rows){
+  var cnt=[],i,j;
+  for(j=0;j<7;j++){cnt.push({});
+    for(i=0;i<rows.length;i++){var tn=String((rows[i].cells[j]||{}).t||'').trim().toLowerCase();if(tn)cnt[j][tn]=(cnt[j][tn]||0)+1}
+  }
+  return cnt;
+}
+function ptTable(editable){
+  var rows=ptEnsure(),cnt=(editable&&_ptClash)?ptClashMap(rows):null,i,j;
+  var h='<table class="ptt"><thead><tr><th class="ptc">Classes</th>';
+  for(j=0;j<5;j++)h+='<th>'+PT_PERIODS[j].toUpperCase()+'</th>';
+  h+='<th>BREAK</th><th>'+PT_PERIODS[5].toUpperCase()+'</th><th>'+PT_PERIODS[6].toUpperCase()+'</th></tr></thead><tbody>';
+  for(i=0;i<rows.length;i++){
+    h+='<tr><td class="ptc"'+(editable?' onclick="ptEditRow('+i+')"':'')+'>'+waEsc(rows[i].label)+'</td>';
+    for(j=0;j<7;j++){
+      if(j===5){ if(i===0)h+='<td class="ptb" rowspan="'+rows.length+'"><div>BREAK</div></td>'; }
+      var c=rows[i].cells[j]||{s:'',t:''},tn=String(c.t||'').trim().toLowerCase();
+      var cl=(cnt&&tn&&cnt[j][tn]>1)?' class="ptclash" title="Same teacher is in another class at this time"':'';
+      h+='<td'+cl+(editable?' onclick="ptEdit('+i+','+j+')"':'')+'>'+((c.s||c.t)?'<b>'+waEsc(c.s)+'</b><span>'+waEsc(c.t)+'</span>':(editable?'<span class="ptadd">+</span>':''))+'</td>';
+    }
+    h+='</tr>';
+  }
+  return h+'</tbody></table>';
+}
+function renderPeriodTimetable(){
+  var h='<div class="fade"><div class="af" style="max-width:100%">';
+  h+='<h2>&#128197; Teachers Period Time Table</h2><p class="sub">Universal Public School (UPS) Landi Kotal &middot; Tap any box to edit its subject and teacher. Tap a class name to rename or remove it.</p>';
+  h+='<div class="tbar" style="margin-bottom:14px"><button class="btn btn-sm" type="button" onclick="ptAddRow()" style="background:'+C.g+'">+ Add Class</button> ';
+  h+='<button class="btn btn-sm" type="button" onclick="ptPrint()" style="background:'+C.a+'">&#128424; Print</button> ';
+  h+='<label style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#6B6B6B;cursor:pointer"><input type="checkbox" '+(_ptClash?'checked':'')+' onchange="_ptClash=this.checked;render()"> Highlight clashes (same teacher in two classes at once)</label></div>';
+  h+='<div class="tw"><div class="tsx">'+ptTable(true)+'</div></div></div></div>';
+  return h;
+}
+function ptNames(){
+  var seen={},list=[],rows=ptEnsure(),i,j,st=DB['Teachers & Staff']||[];
+  function add(x){x=String(x||'').trim();if(x&&!seen[x.toLowerCase()]){seen[x.toLowerCase()]=1;list.push(x)}}
+  for(i=0;i<rows.length;i++)for(j=0;j<7;j++)add((rows[i].cells[j]||{}).t);
+  for(i=0;i<st.length;i++)add(st[i].name);
+  return list.sort();
+}
+function ptSubjects(){
+  var seen={},list=[],rows=ptEnsure(),i,j;
+  for(i=0;i<rows.length;i++)for(j=0;j<7;j++){var x=String((rows[i].cells[j]||{}).s||'').trim();if(x&&!seen[x.toLowerCase()]){seen[x.toLowerCase()]=1;list.push(x)}}
+  return list.sort();
+}
+function ptEdit(i,j){
+  var rows=ptEnsure(),r=rows[i];if(!r)return;
+  _ptI=i;_ptJ=j;var c=r.cells[j]||{s:'',t:''},k,o='';
+  var h='<button class="mx" onclick="closem()">&times;</button><h3>Edit period</h3><p style="font-size:12px;color:#6B6B6B;margin-bottom:14px">'+waEsc(r.label)+' &middot; '+PT_PERIODS[j]+'</p>';
+  h+='<div class="ff" style="margin-bottom:12px"><label>Subject</label><input id="ptSub" list="ptSubList" value="'+waEsc(c.s)+'" placeholder="e.g. Maths"></div>';
+  h+='<div class="ff" style="margin-bottom:6px"><label>Teacher</label><input id="ptTch" list="ptTchList" value="'+waEsc(c.t)+'" placeholder="Type or pick a teacher"></div>';
+  var sl=ptSubjects(),tl=ptNames();
+  h+='<datalist id="ptSubList">';for(k=0;k<sl.length;k++)h+='<option value="'+waEsc(sl[k])+'">';h+='</datalist><datalist id="ptTchList">';
+  for(k=0;k<tl.length;k++)h+='<option value="'+waEsc(tl[k])+'">';h+='</datalist>';
+  h+='<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap"><button class="btn-submit" type="button" onclick="ptSaveCell()">Save</button><button class="btn-reset" type="button" onclick="ptClearCell()">Clear box</button><button class="btn-reset" type="button" onclick="closem()">Cancel</button></div>';
+  document.getElementById('mc').innerHTML=h;document.getElementById('mo').style.display='flex';
+}
+function ptSaveCell(){
+  var r=ptEnsure()[_ptI];if(!r)return;
+  r.cells[_ptJ]={s:document.getElementById('ptSub').value.trim(),t:document.getElementById('ptTch').value.trim()};
+  saveDB();closem();toast('Timetable saved \u2713');render();
+}
+function ptClearCell(){
+  var r=ptEnsure()[_ptI];if(!r)return;
+  r.cells[_ptJ]={s:'',t:''};saveDB();closem();toast('Box cleared');render();
+}
+function ptEditRow(i){
+  var r=ptEnsure()[i];if(!r)return;_ptI=i;
+  var h='<button class="mx" onclick="closem()">&times;</button><h3>Class row</h3>';
+  h+='<div class="ff" style="margin-top:12px"><label>Class name</label><input id="ptLbl" value="'+waEsc(r.label)+'"></div>';
+  h+='<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap"><button class="btn-submit" type="button" onclick="ptSaveRow()">Save</button><button class="btn-reset" type="button" onclick="ptDelRow()" style="color:#DC2626">Delete row</button><button class="btn-reset" type="button" onclick="closem()">Cancel</button></div>';
+  document.getElementById('mc').innerHTML=h;document.getElementById('mo').style.display='flex';
+}
+function ptSaveRow(){
+  var r=ptEnsure()[_ptI],v=document.getElementById('ptLbl').value.trim();
+  if(!r)return;if(!v){alert('Please enter a class name');return}
+  r.label=v;saveDB();closem();toast('Saved \u2713');render();
+}
+function ptDelRow(){
+  var rows=ptEnsure(),r=rows[_ptI];if(!r)return;
+  if(!confirm('Delete the whole row for '+r.label+'?'))return;
+  rows.splice(_ptI,1);saveDB();closem();toast('Row deleted');render();
+}
+function ptAddRow(){
+  var nm=prompt('New class name (example: 11th Class)');
+  if(!nm||!nm.trim())return;
+  var cells=[];for(var j=0;j<7;j++)cells.push({s:'',t:''});
+  ptEnsure().push({id:Date.now(),label:nm.trim(),grade:'',cells:cells});
+  saveDB();toast('Class added');render();
+}
+function ptPrint(){
+  var w=window.open('','_blank','width=1100,height=700');
+  if(!w){alert('Please allow pop-ups to print');return}
+  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Teachers Period Time Table</title><style>@page{size:landscape;margin:10mm}body{font-family:system-ui,sans-serif;color:#111;margin:0;padding:8px}h1{font-size:18px;text-align:center;margin:0 0 2px}h2{font-size:14px;text-align:center;margin:0 0 12px;text-decoration:underline}table{border-collapse:collapse;width:100%;font-size:11px}th,td{border:1px solid #333;padding:6px 4px;text-align:center}th{background:#eee}td b{display:block}td span{display:block;font-size:10px}.ptc{font-weight:700;text-align:left}.ptb div{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;letter-spacing:4px;margin:auto}</style></head><body>';
+  h+='<h1>UNIVERSAL PUBLIC SCHOOL (UPS) LANDI KOTAL</h1><h2>TEACHERS PERIOD TIME TABLE</h2>'+ptTable(false)+'</body></html>';
+  w.document.write(h);w.document.close();setTimeout(function(){w.focus();w.print()},300);
 }
 
 // ===== INIT =====
@@ -3820,6 +4282,8 @@ function loadSavedData(){
     }
     DB['Student Categories']=DB['Student Categories']||[];
     DB['Stationery']=DB['Stationery']||[];
+    DB['PromotionLog']=DB['PromotionLog']||[];
+    if(!DB['PeriodTimetable']||!DB['PeriodTimetable'].length)DB['PeriodTimetable']=ptSeed();
   }catch(e){}
 }
 
@@ -3866,6 +4330,7 @@ function restoreData(e){
 
 function init(){
   loadSavedData();
+  buildThemePicker();applyTheme(savedTheme());
   var tc=document.getElementById('tabs');
   tc.innerHTML=icodefs();
   TABS.forEach(function(t){
@@ -3883,6 +4348,685 @@ function init(){
   document.getElementById('hs').textContent=DB['Students'].length+' students  |  '+DB['Teachers & Staff'].length+' staff  |  11 modules';
   cur='Overview';render();
 }
+// =====================================================================
+// ===== ADD-ON: DMC / LEAVING CERTIFICATE / STUDENT CARDS / FEE RECEIPTS
+// =====================================================================
+var UX_LOGO='data:image/png;base64,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';
+var UX_NAME='UNIVERSAL PUBLIC HIGH SCHOOL', UX_PLACE='LANDIKOTAL KPK';
+var UX_TERMS=['First Term Exam','Second Term Exam','Third Term Exam'];
+var UX_PRESETS=[
+  {n:'Violet',a:'#7C3AED',b:'#A78BFA'},{n:'Ocean',a:'#0369A1',b:'#38BDF8'},{n:'Forest',a:'#15803D',b:'#4ADE80'},
+  {n:'Sunset',a:'#EA580C',b:'#FBBF24'},{n:'Rose',a:'#BE123C',b:'#FB7185'},{n:'Teal',a:'#0F766E',b:'#2DD4BF'},
+  {n:'Navy',a:'#1E3A8A',b:'#3B82F6'},{n:'Crimson',a:'#991B1B',b:'#F87171'},{n:'Gold',a:'#92400E',b:'#F59E0B'},{n:'Black',a:'#111827',b:'#6B7280'}
+];
+sc.Left=C.c; st.Left='#DC2626'; sc['Re-admitted']=C.g; st['Re-admitted']='#166534';
+
+function uxE(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function uxList(k){if(!Array.isArray(DB[k]))DB[k]=[];return DB[k]}
+function uxNext(a){var m=0;for(var i=0;i<a.length;i++)if(n(a[i].id)>m)m=n(a[i].id);return m+1}
+function uxCfg(){
+  var c=DB['CardSettings'];
+  if(!c||typeof c!=='object'||Array.isArray(c)){c={};DB['CardSettings']=c}
+  if(!c.c1){c.c1=UX_PRESETS[0].a;c.c2=UX_PRESETS[0].b}
+  if(!Array.isArray(c.pics))c.pics=[];
+  if(c.valid==null)c.valid='March '+(new Date().getFullYear()+1);
+  if(c.phone==null)c.phone='';
+  if(c.addr==null)c.addr='Landikotal, District Khyber, KPK';
+  return c;
+}
+function uxLogo(){return uxCfg().logo||UX_LOGO}
+function uxFmt(d){var x=/^(\d{4})-(\d{2})-(\d{2})/.exec(s(d));return x?x[3]+'-'+x[2]+'-'+x[1]:s(d)}
+function uxCls(g){g=s(g);return ['Nursery','LKG','UKG','KG'].indexOf(g)>=0?g:'Class '+g}
+function uxClsSec(r){return uxCls(r.grade)+(s(r.section)?' - '+s(r.section):'')}
+function uxStuById(id){var a=DB['Students'];for(var i=0;i<a.length;i++)if(String(a[i].id)===String(id))return a[i];return null}
+function uxStuFor(r){
+  var a=DB['Students'],i;
+  if(r.student_id!=null&&r.student_id!==''){for(i=0;i<a.length;i++)if(String(a[i].id)===String(r.student_id)&&(!r.student_name||a[i].name===r.student_name))return a[i]}
+  if(s(r.admission_no)){for(i=0;i<a.length;i++)if(s(a[i].admission_no)===s(r.admission_no))return a[i]}
+  for(i=0;i<a.length;i++)if(s(a[i].name).toLowerCase()===s(r.student_name).toLowerCase())return a[i];
+  return null;
+}
+function uxStudents(cls,activeOnly){
+  return DB['Students'].filter(function(x){return String(x.grade)===String(cls)&&(!activeOnly||s(x.status)==='Active'||!s(x.status))})
+    .sort(function(a,b){return (n(a.roll_no)-n(b.roll_no))||s(a.name).localeCompare(s(b.name))});
+}
+function uxClassOpts(sel,all,allLabel){
+  var h=all?'<option value="all"'+(sel==='all'?' selected':'')+'>'+(allLabel||'All Classes')+'</option>':'<option value="">Select class</option>';
+  for(var i=0;i<PM_GRADES.length;i++)h+='<option value="'+PM_GRADES[i]+'"'+(String(sel)===PM_GRADES[i]?' selected':'')+'>'+uxCls(PM_GRADES[i])+'</option>';
+  return h;
+}
+function uxWords(num){
+  num=Math.round(Number(num)||0);if(num<0)num=0;if(num===0)return 'Zero';
+  var o=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+  var t=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+  function b(x){var r='';if(x>=100){r+=o[Math.floor(x/100)]+' Hundred';x%=100;if(x)r+=' '}
+    if(x>=20){r+=t[Math.floor(x/10)];if(x%10)r+='-'+o[x%10]}else if(x>0)r+=o[x];return r}
+  var out=[],m=Math.floor(num/1000000),th=Math.floor((num%1000000)/1000),rest=num%1000;
+  if(m)out.push(b(m)+' Million');if(th)out.push(b(th)+' Thousand');if(rest)out.push(b(rest));
+  return out.join(' ');
+}
+function uxOrd(i){var j=i%10,k=i%100;return i+(j===1&&k!==11?'st':j===2&&k!==12?'nd':j===3&&k!==13?'rd':'th')}
+function uxGrade(p){return p>=80?'A+':p>=70?'A':p>=60?'B':p>=50?'C':p>=40?'D':p>=33?'E':'F'}
+function uxCalc(rows){
+  var T=0,O=0,fail=0;
+  rows.forEach(function(r){var t=n(r.t),o=Math.min(n(r.o),t);T+=t;O+=o;if(t>0&&o/t*100<33)fail++});
+  var p=T?Math.round(O/T*10000)/100:0;
+  return {T:T,O:O,p:p,g:uxGrade(p),res:fail?'Fail':'Pass',fail:fail};
+}
+function uxPad(x,l){x=String(x);while(x.length<l)x='0'+x;return x}
+
+// ---------- shared print / preview ----------
+var UX_DOC_CSS=
+'*{box-sizing:border-box}html,body{margin:0}body{font-family:"Times New Roman",Georgia,serif;color:#111;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}'+
+'@page{size:A4;margin:8mm}@media screen{body{padding:8mm}}'+
+'.pg{width:194mm;min-height:279mm;margin:0 auto;padding:7mm 8mm;border:1.6mm double #1e3a8a;position:relative;page-break-after:always;overflow:hidden}.pg:last-child{page-break-after:auto}'+
+'.wm{position:absolute;left:50%;top:50%;width:105mm;height:105mm;margin:-52mm 0 0 -52mm;opacity:.07;object-fit:contain;z-index:0}'+
+'.pg>*{position:relative;z-index:1}.pg>.wm{position:absolute}'+
+'.dh{display:flex;align-items:center;gap:5mm;border-bottom:.6mm solid #1e3a8a;padding-bottom:3mm}'+
+'.dh .lg{width:24mm;height:24mm;object-fit:contain}.dh .hc{flex:1;text-align:center}'+
+'.sn{font-size:19pt;font-weight:bold;color:#1e3a8a;letter-spacing:.4mm;line-height:1.1}.sp{font-size:12pt;font-weight:bold;letter-spacing:1mm;margin-top:1mm}'+
+'.dt{display:inline-block;margin-top:2.5mm;padding:1.2mm 5mm;border:.4mm solid #1e3a8a;border-radius:2mm;font-size:12pt;font-weight:bold;color:#1e3a8a;background:#eef2ff}'+
+'.dh .ph{width:26mm;height:32mm;border:.4mm solid #444;display:flex;align-items:center;justify-content:center;font-size:8pt;color:#777;text-align:center;overflow:hidden}.dh .ph img{width:100%;height:100%;object-fit:cover}'+
+'.ses{display:flex;justify-content:space-between;font-size:11.5pt;margin:3mm 0}'+
+'table{border-collapse:collapse;width:100%}'+
+'.inf td{padding:1.4mm 2mm;font-size:11.5pt;border-bottom:.25mm dotted #666}.inf td.l{width:30mm;font-weight:bold;white-space:nowrap}.inf td b{font-size:12.5pt}'+
+'.st{font-size:11.5pt;margin:4mm 0 2.5mm;line-height:1.5;text-align:justify}'+
+'.mk th,.mk td{border:.3mm solid #222;padding:1.8mm 2.2mm;font-size:11.5pt}.mk th{background:#1e3a8a;color:#fff;text-align:center;font-size:10.5pt}'+
+'.mk td.c{text-align:center}.mk td.w{font-size:10.5pt}.mk tr.tot td{font-weight:bold;background:#eef2ff}.mk .fl{color:#b91c1c;font-weight:bold}'+
+'.sum{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin-top:4mm}.sum div{border:.3mm solid #1e3a8a;border-radius:2mm;text-align:center;padding:2mm 1mm;background:#f8faff}'+
+'.sum em{display:block;font-style:normal;font-size:9pt;color:#555;text-transform:uppercase;letter-spacing:.3mm}.sum b{font-size:14pt;color:#1e3a8a}'+
+'.rem{margin-top:3.5mm;font-size:11pt;border:.3mm solid #999;padding:2mm 3mm;min-height:11mm}'+
+'.sig{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16mm;font-size:11pt}.sig div{text-align:center;width:55mm;border-top:.35mm solid #111;padding-top:1.2mm;font-weight:bold}.sig .dt2{border:none;text-align:left;width:auto;font-weight:normal}'+
+'.note{margin-top:6mm;font-size:8.5pt;color:#444;text-align:center;border-top:.25mm solid #aaa;padding-top:1.5mm}'+
+/* leaving certificate */
+'.lc{border-color:#7c2d12}.lc .sn,.lc .dt{color:#7c2d12}.lc .dh{border-color:#7c2d12}.lc .dt{border-color:#7c2d12;background:#fff7ed;font-size:15pt;padding:1.6mm 8mm}'+
+'.lcno{display:flex;justify-content:space-between;font-size:11.5pt;margin:5mm 0 4mm}'+
+'.lcp{font-size:13pt;line-height:1.9;text-align:justify;margin:3mm 0 5mm}.lcp u{text-decoration:none;border-bottom:.3mm dotted #111;font-weight:bold;padding:0 1.5mm}'+
+'.lct td{border:.3mm solid #444;padding:2.2mm 3mm;font-size:12pt}.lct td.l{width:62mm;font-weight:bold;background:#fff7ed}'+
+/* fee receipt */
+'.rc{border:.5mm solid #14532d;border-radius:3mm;padding:5mm 6mm;margin:0 auto 6mm;width:190mm;position:relative;overflow:hidden;page-break-inside:avoid;font-family:Arial,Helvetica,sans-serif}'+
+'.rc .wm{width:70mm;height:70mm;margin:-35mm 0 0 -35mm}.rc>*{position:relative;z-index:1}.rc>.wm,.rc>.stamp,.rc>.cp{position:absolute}.rc>.wm{z-index:0}'+
+'.rc .dh{border-color:#14532d;padding-bottom:2mm}.rc .dh .lg{width:17mm;height:17mm}.rc .sn{font-size:16pt;color:#14532d}.rc .sp{font-size:9.5pt}.rc .dt{font-size:10.5pt;color:#14532d;border-color:#14532d;background:#f0fdf4;margin-top:1.5mm}'+
+'.rc .cp{position:absolute;right:5mm;top:4mm;font-size:8.5pt;font-weight:bold;color:#14532d;border:.3mm solid #14532d;border-radius:2mm;padding:.6mm 2.5mm}'+
+'.rc .ri{display:flex;justify-content:space-between;font-size:10.5pt;margin:2.5mm 0}.rc table td,.rc table th{border:.25mm solid #555;padding:1.4mm 2.2mm;font-size:10pt}.rc table th{background:#14532d;color:#fff}'+
+'.rc .inf td{border:none;border-bottom:.25mm dotted #666;font-size:10.5pt;padding:1mm 1.5mm}.rc .inf td.l{width:26mm}'+
+'.rc .words{font-size:10pt;margin-top:2mm}.rc .stamp{position:absolute;right:62mm;bottom:5mm;border:.8mm solid #15803d;color:#15803d;font-weight:bold;font-size:17pt;padding:.8mm 4mm;transform:rotate(-12deg);border-radius:2mm;opacity:.75}'+
+'.rc .stamp.part{border-color:#b45309;color:#b45309}'+
+'.rc .sg2{display:flex;justify-content:space-between;margin-top:9mm;font-size:9.5pt}.rc .sg2 div{border-top:.3mm solid #111;width:48mm;text-align:center;padding-top:1mm}'+
+'.cut{border-top:.3mm dashed #888;margin:1mm 0 6mm;text-align:center;font-size:8pt;color:#888;line-height:0}.cut span{background:#fff;padding:0 3mm}'+
+/* cards */
+'.sheet{display:grid;grid-template-columns:repeat(2,85.6mm);gap:4mm 6mm;justify-content:center;page-break-after:always;padding:2mm 0}.sheet:last-child{page-break-after:auto}.sheet .idw{width:85.6mm;outline:.2mm dashed #bbb;outline-offset:.6mm;border-radius:3mm}.sheet .idc{box-shadow:none}';
+
+var UX_CARD_CSS=
+'.idw{container-type:inline-size;width:100%;max-width:430px}'+
+'.idc{position:relative;width:100%;aspect-ratio:85.6/54;border-radius:3.2cqw;overflow:hidden;background:#fff;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;box-shadow:0 4px 14px rgba(0,0,0,.18);-webkit-print-color-adjust:exact;print-color-adjust:exact}'+
+'.idc .deco{position:absolute;border-radius:50%;background:var(--c2);opacity:.13}.idc .d1{right:-9cqw;top:26cqw;width:36cqw;height:36cqw}.idc .d2{left:-11cqw;bottom:2cqw;width:26cqw;height:26cqw}'+
+'.idc .hd{position:absolute;left:0;right:0;top:0;height:19cqw;background:linear-gradient(100deg,var(--c1),var(--c2));display:flex;align-items:center;gap:2.6cqw;padding:0 3.2cqw;color:#fff}'+
+'.idc .hd .lg{width:14.2cqw;height:14.2cqw;border-radius:50%;background:#fff;padding:.6cqw;object-fit:contain;flex:none}'+
+'.idc .hd .tt{display:flex;flex-direction:column;line-height:1.2;min-width:0}.idc .hd .tt b{font-size:3.7cqw;letter-spacing:.15cqw;white-space:nowrap}.idc .hd .tt span{font-size:2.7cqw;opacity:.95;letter-spacing:.4cqw;font-weight:700}'+
+'.idc .bd{position:absolute;left:3.2cqw;right:3.2cqw;top:21.8cqw;display:flex;gap:3.5cqw}'+
+'.idc .pf{width:23cqw;height:29cqw;border:.8cqw solid var(--c1);border-radius:2cqw;overflow:hidden;background:#f3f3f3;flex:none;display:flex;align-items:center;justify-content:center}.idc .pf img{width:100%;height:100%;object-fit:cover}.idc .pf i{font-style:normal;font-size:9cqw;font-weight:800;color:var(--c1)}'+
+'.idc .dtl{flex:1;min-width:0}.idc .nm{font-size:4.7cqw;font-weight:800;color:var(--c1);line-height:1.15;border-bottom:.4cqw solid var(--c2);padding-bottom:1cqw;margin-bottom:.8cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}'+
+'.idc .rw{display:flex;font-size:2.9cqw;line-height:1.1;padding:.75cqw 0}.idc .rw em{font-style:normal;font-weight:700;color:#555;width:14.5cqw;flex:none}.idc .rw span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}'+
+'.idc .ft{position:absolute;left:0;right:0;bottom:0;height:8.4cqw;background:linear-gradient(100deg,var(--c1),var(--c2));color:#fff;font-size:2.5cqw;display:flex;align-items:center;justify-content:space-between;padding:0 3.2cqw;font-weight:700}'+
+'.idc .ft .sgn{border-top:.3cqw solid #fff;padding-top:.4cqw;font-size:2.2cqw;margin-top:1cqw}'+
+'.idc .pics{position:absolute;left:0;right:0;top:0;height:19.5cqw;display:flex;gap:.6cqw;border-bottom:1.2cqw solid var(--c1);background:#e5e7eb}.idc .pics img,.idc .pics svg{flex:1;min-width:0;height:100%;width:100%;object-fit:cover}'+
+'.idc .det{position:absolute;left:3.2cqw;right:3.2cqw;top:22.6cqw;display:grid;grid-template-columns:1fr 1fr;gap:1cqw 3cqw}.idc .det div{min-width:0}.idc .det em{display:block;font-style:normal;color:var(--c1);font-size:2cqw;font-weight:800;text-transform:uppercase;letter-spacing:.2cqw}.idc .det b{display:block;font-size:2.8cqw;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.idc .det .w{grid-column:1/3}.idc .det .w b{white-space:normal;line-height:1.2}'+
+'.idc .nt{position:absolute;left:0;right:0;bottom:0;height:10cqw;background:linear-gradient(100deg,var(--c1),var(--c2));color:#fff;font-size:2.25cqw;padding:1.3cqw 3.2cqw;line-height:1.3;text-align:center;font-weight:600}';
+
+function uxDocHTML(title,body,extraCss){
+  return '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+uxE(title)+'</title><style>'+UX_DOC_CSS+UX_CARD_CSS+(extraCss||'')+'</style></head><body>'+body+'</body></html>';
+}
+// Print in a new window (same method as the other print buttons in this app)
+function uxPrintHTML(html){
+  var w=null;try{w=window.open('','_blank')}catch(e){}
+  if(w){w.document.write(html);w.document.close();setTimeout(function(){try{w.focus();w.print()}catch(e){}},700);return}
+  var fr=document.getElementById('uxPF');
+  if(fr){var d=fr.contentWindow;try{d.focus();d.print();return}catch(e){}}
+  alert('Please allow pop-ups for this app, then press Print again.');
+}
+var _uxHTML='';
+function uxPreview(title,html){
+  _uxHTML=html;uxClosePrev();
+  var o=document.createElement('div');o.className='uxov';o.id='uxov';
+  o.innerHTML='<div class="bar"><b>'+uxE(title)+'</b><button class="uxb" onclick="uxPrintHTML(_uxHTML)">&#128424; Print</button><button class="uxb ghost" onclick="uxClosePrev()">Close</button></div><div class="vw" id="uxvw"><div id="uxwrap" style="margin:0 auto"><iframe id="uxPF" style="width:820px;height:1200px"></iframe></div></div>';
+  document.body.appendChild(o);
+  var fr=document.getElementById('uxPF');
+  fr.onload=function(){uxFit()};
+  fr.srcdoc=html;
+  window.addEventListener('resize',uxFit);
+}
+function uxFit(){
+  var fr=document.getElementById('uxPF'),vw=document.getElementById('uxvw'),wr=document.getElementById('uxwrap');
+  if(!fr||!vw||!wr)return;
+  try{var h=fr.contentDocument.documentElement.scrollHeight;if(h)fr.style.height=h+'px'}catch(e){}
+  var sc2=Math.min(1,(vw.clientWidth-24)/820);
+  fr.style.transform='scale('+sc2+')';
+  wr.style.width=(820*sc2)+'px';wr.style.height=(parseFloat(fr.style.height)*sc2)+'px';
+}
+function uxClosePrev(){var o=document.getElementById('uxov');if(o)o.remove();window.removeEventListener('resize',uxFit)}
+function uxImg(file,maxW,cb,type){
+  var r=new FileReader();
+  r.onload=function(e){var im=new Image();im.onload=function(){
+    var k=Math.min(1,maxW/im.width),cv=document.createElement('canvas');
+    cv.width=Math.round(im.width*k);cv.height=Math.round(im.height*k);
+    cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);cb(cv.toDataURL(type||'image/jpeg',.72))};
+    im.src=e.target.result};
+  r.readAsDataURL(file);
+}
+function uxHead(sub,photo,extra){
+  return '<img class="wm" src="'+uxLogo()+'"><div class="dh"><img class="lg" src="'+uxLogo()+'"><div class="hc"><div class="sn">'+UX_NAME+'</div><div class="sp">'+UX_PLACE+'</div><div class="dt">'+sub+'</div></div>'+(photo===false?'<div style="width:24mm"></div>':'<div class="ph">'+(photo?'<img src="'+photo+'">':'Student<br>Photo')+'</div>')+'</div>';
+}
+
+(function(){var e=document.createElement('style');e.id='uxcardcss';e.textContent=UX_CARD_CSS;document.head.appendChild(e)})();
+
+// =====================================================================
+// ===== EXAM RESULTS / DMC (3 terms per year) =========================
+// =====================================================================
+function uxSession(){var d=new Date(),y=d.getFullYear(),a=d.getMonth()>=3?y:y-1;return a+'-'+String(a+1).slice(-2)}
+var _ex={cls:'',stu:'',term:UX_TERMS[0],session:uxSession(),month:'',rows:[],remarks:'',group:'',editId:0,fCls:'all',fTerm:'all',q:''};
+
+function exDefaultRows(cls){
+  var subs=[];try{subs=perSubjects(cls).slice()}catch(e){subs=['English','Urdu','Maths','Pak Studies','Islamiat','Science']}
+  return subs.map(function(x){return {n:x,t:100,o:'',th:'',pr:''}});
+}
+function exFind(stu,term,session){
+  var a=uxList('ExamDMC');
+  for(var i=0;i<a.length;i++)if(String(a[i].student_id)===String(stu)&&a[i].term===term&&a[i].session===session)return a[i];
+  return null;
+}
+function exLoad(){
+  if(!_ex.stu){_ex.rows=[];_ex.editId=0;return}
+  var r=exFind(_ex.stu,_ex.term,_ex.session);
+  if(r){_ex.rows=r.subjects.map(function(x){return {n:x.name,t:x.total,o:x.obt,th:x.th==null?'':x.th,pr:x.pr==null?'':x.pr}});_ex.group=r.group||'';_ex.remarks=r.remarks||'';_ex.month=r.exam_month||_ex.month;_ex.editId=r.id}
+  else{_ex.rows=exDefaultRows(_ex.cls);_ex.remarks='';_ex.group='';_ex.editId=0}
+}
+function exCls(v){_ex.cls=v;_ex.stu='';_ex.rows=[];_ex.editId=0;render()}
+function exStu(v){_ex.stu=v;exLoad();render()}
+function exTerm(v){_ex.term=v;exLoad();render()}
+function exSes(v){_ex.session=s(v)||uxSession();exLoad();render()}
+function exRow(i,k,v){
+  var r=_ex.rows[i];if(!r)return;
+  r[k]=v;
+  if(k==='th'||k==='pr'){
+    if(s(r.th)!==''||s(r.pr)!==''){r.o=n(r.th)+n(r.pr);var el=document.getElementById('exo'+i);if(el)el.value=r.o}
+  }
+  exSum();
+}
+function exPhoto(inp){
+  var f=inp.files&&inp.files[0],sx=uxStuById(_ex.stu);if(!f||!sx)return;
+  uxImg(f,360,function(d){sx.photo=d;saveDB();render()});
+}
+function exAddSub(){_ex.rows.push({n:'',t:100,o:''});render()}
+function exDelSub(i){_ex.rows.splice(i,1);render()}
+function exSum(){
+  var el=document.getElementById('exSum');if(!el)return;
+  var c=uxCalc(_ex.rows);
+  el.innerHTML='<span>Total: '+c.O+' / '+c.T+'</span><span>'+c.p+'%</span><span>Grade: '+c.g+'</span><span style="'+(c.fail?'background:#FEE2E2;color:#B91C1C':'background:#DCFCE7;color:#166534')+'">'+c.res+'</span>';
+}
+function exSave(){
+  var st0=uxStuById(_ex.stu);
+  if(!st0){alert('Please select a class and a student first.');return}
+  var rows=_ex.rows.filter(function(r){return s(r.n)});
+  if(!rows.length){alert('Add at least one subject.');return}
+  var subjects=rows.map(function(r){var t=n(r.t);return {name:s(r.n),total:t,obt:Math.min(n(r.o),t),th:s(r.th)===''?'':n(r.th),pr:s(r.pr)===''?'':n(r.pr)}});
+  var c=uxCalc(rows);
+  var a=uxList('ExamDMC'),rec=exFind(_ex.stu,_ex.term,_ex.session);
+  var data={student_id:st0.id,admission_no:st0.admission_no,student_name:st0.name,father:st0.parent_name||'',roll_no:st0.roll_no||'',
+    grade:String(st0.grade),section:st0.section||'',term:_ex.term,session:_ex.session,exam_month:s(_ex.month),group:s(_ex.group),subjects:subjects,
+    total:c.T,obtained:c.O,percent:c.p,grade_letter:c.g,result:c.res,remarks:s(_ex.remarks),date:perDay()};
+  if(rec){for(var k in data)rec[k]=data[k]}else{data.id=uxNext(a);a.push(data)}
+  saveDB();toast('Result saved');
+  _ex.stu='';_ex.rows=[];_ex.editId=0;render();
+}
+function exEdit(id){
+  var a=uxList('ExamDMC');
+  for(var i=0;i<a.length;i++)if(a[i].id===id){
+    var r=a[i];_ex.cls=r.grade;_ex.stu=String(r.student_id);_ex.term=r.term;_ex.session=r.session;exLoad();render();window.scrollTo({top:0,behavior:'smooth'});return}
+}
+function exDel(id){
+  if(!confirm('Delete this result?'))return;
+  var a=uxList('ExamDMC');for(var i=0;i<a.length;i++)if(a[i].id===id){a.splice(i,1);break}
+  saveDB();render();
+}
+function exById(id){var a=uxList('ExamDMC');for(var i=0;i<a.length;i++)if(a[i].id===id)return a[i];return null}
+
+function renderExam(){
+  var all=uxList('ExamDMC');
+  var h='<div class="fade">';
+  h+='<div class="uxbox"><div class="uxt">&#128221; Enter Marks &mdash; DMC (Detailed Marks Certificate)</div><div class="uxg">';
+  h+='<div class="ff"><label>Class</label><select onchange="exCls(this.value)">'+uxClassOpts(_ex.cls)+'</select></div>';
+  h+='<div class="ff"><label>Exam</label><select onchange="exTerm(this.value)">'+UX_TERMS.map(function(t){return '<option'+(t===_ex.term?' selected':'')+'>'+t+'</option>'}).join('')+'</select></div>';
+  h+='<div class="ff"><label>Session</label><input value="'+uxE(_ex.session)+'" onchange="exSes(this.value)" placeholder="2026-27"></div>';
+  h+='<div class="ff"><label>Exam held in (month)</label><input value="'+uxE(_ex.month)+'" oninput="_ex.month=this.value" placeholder="e.g. October 2026"></div>';
+  h+='<div class="ff"><label>Group (optional)</label><input value="'+uxE(_ex.group)+'" oninput="_ex.group=this.value" placeholder="e.g. Science"></div>';
+  h+='<div class="ff"><label>Student</label><select onchange="exStu(this.value)"><option value="">'+(_ex.cls?'Select student':'Select class first')+'</option>';
+  if(_ex.cls)uxStudents(_ex.cls,true).forEach(function(x){h+='<option value="'+x.id+'"'+(String(x.id)===String(_ex.stu)?' selected':'')+'>'+(s(x.roll_no)?x.roll_no+' - ':'')+uxE(x.name)+'</option>'});
+  h+='</select></div></div>';
+  if(_ex.stu){
+    var sx=uxStuById(_ex.stu);
+    h+='<div class="uxrow"><div style="width:54px;height:66px;border:1px solid #ddd;border-radius:8px;overflow:hidden;background:#f3f3f3;display:flex;align-items:center;justify-content:center;font-size:10px;color:#999">'+(sx&&sx.photo?'<img src="'+sx.photo+'" style="width:100%;height:100%;object-fit:cover">':'No photo')+'</div><label class="uxb ghost sm" style="cursor:pointer">&#128247; '+(sx&&sx.photo?'Change':'Add')+' student photo (shown on DMC)<input type="file" accept="image/*" style="display:none" onchange="exPhoto(this)"></label></div>';
+    h+='<div class="uxnote" style="margin-top:8px"><b>'+uxE(sx?sx.name:'')+'</b> &middot; '+(_ex.editId?'<span style="color:#B45309">Result already saved &mdash; you are editing it</span>':'New result')+'</div>';
+    h+='<div style="overflow-x:auto;margin-top:8px"><table class="uxmk"><thead><tr><th>Subject</th><th style="width:80px">Total</th><th style="width:84px">Theory</th><th style="width:84px">Practical</th><th style="width:92px">Obtained</th><th style="width:40px"></th></tr></thead><tbody>';
+    _ex.rows.forEach(function(r,i){
+      h+='<tr><td><input value="'+uxE(r.n)+'" oninput="exRow('+i+',\'n\',this.value)" placeholder="Subject"></td>'+
+         '<td><input type="number" inputmode="numeric" value="'+uxE(r.t)+'" oninput="exRow('+i+',\'t\',this.value)"></td>'+
+         '<td><input type="number" inputmode="decimal" value="'+uxE(r.th)+'" oninput="exRow('+i+',\'th\',this.value)" placeholder="-"></td>'+
+         '<td><input type="number" inputmode="decimal" value="'+uxE(r.pr)+'" oninput="exRow('+i+',\'pr\',this.value)" placeholder="-"></td>'+
+         '<td><input id="exo'+i+'" type="number" inputmode="decimal" value="'+uxE(r.o)+'" oninput="exRow('+i+',\'o\',this.value)" style="font-weight:700"></td>'+
+         '<td><button class="uxb sm ghost" onclick="exDelSub('+i+')" title="Remove" style="color:#DC2626">&times;</button></td></tr>';
+    });
+    h+='</tbody></table></div>';
+    h+='<div class="ff" style="margin-top:10px"><label>Remarks (optional)</label><input value="'+uxE(_ex.remarks)+'" oninput="_ex.remarks=this.value" placeholder="e.g. Good progress"></div>';
+    h+='<div class="uxsum" id="exSum"></div>';
+    h+='<div class="uxrow"><button class="uxb" style="background:'+C.g+';color:#064E3B" onclick="exSave()">&#10004; Save Result</button><button class="uxb ghost" onclick="exAddSub()">+ Add Subject</button><button class="uxb ghost" onclick="_ex.stu=\'\';_ex.rows=[];render()">Cancel</button></div>';
+  }else{
+    h+='<div class="uxnote">Choose class, exam (First / Second / Third Term) and student. Subjects come from the Periods tab and can be edited here.</div>';
+  }
+  h+='</div>';
+
+  // saved list
+  h+='<div class="uxbox"><div class="uxt">&#128203; Saved Results ('+all.length+')</div><div class="uxrow" style="margin-top:0;margin-bottom:10px">';
+  h+='<select class="fs" onchange="_ex.fCls=this.value;exFilter(true)">'+uxClassOpts(_ex.fCls,true)+'</select>';
+  h+='<select class="fs" onchange="_ex.fTerm=this.value;exFilter(true)"><option value="all">All exams</option>'+UX_TERMS.map(function(t){return '<option'+(t===_ex.fTerm?' selected':'')+'>'+t+'</option>'}).join('')+'</select>';
+  h+='<input class="fs" style="min-width:160px" placeholder="Search name..." value="'+uxE(_ex.q)+'" oninput="_ex.q=this.value;exFilter()">';
+  h+='<button class="uxb sm" style="background:'+C.g+';color:#064E3B" onclick="exPrintAll()">&#128424; Print all DMCs (filtered)</button> <button class="uxb ghost sm" onclick="exLegacyOn()">Old marks list</button></div>';
+  h+='<div class="tw"><div class="tsx"><table><thead><tr><th>Student</th><th>Class</th><th>Exam</th><th>Marks</th><th>%</th><th>Result</th><th style="width:230px">Actions</th></tr></thead><tbody id="exBody">'+exRowsHTML()+'</tbody></table></div></div>';
+  h+='</div></div>';
+  setTimeout(exSum,0);
+  return h;
+}
+function exLegacyOn(){window._exLegacy=true;render()}
+function exFilter(){var b=document.getElementById('exBody');if(b)b.innerHTML=exRowsHTML()}
+function exFiltered(){
+  var lq=_ex.q.toLowerCase().trim();
+  return uxList('ExamDMC').filter(function(r){
+    return (_ex.fCls==='all'||r.grade===_ex.fCls)&&(_ex.fTerm==='all'||r.term===_ex.fTerm)&&(!lq||(r.student_name+' '+r.admission_no).toLowerCase().indexOf(lq)>=0)});
+}
+function exPrintAll(){
+  var rows=exFiltered().slice().sort(function(a,b){return (n(a.roll_no)-n(b.roll_no))||s(a.student_name).localeCompare(s(b.student_name))});
+  if(!rows.length){alert('No results to print. Choose a class and exam in the filters first.');return}
+  uxPreview('DMCs ('+rows.length+')',uxDocHTML('DMCs',rows.map(exDmcPage).join('')));
+}
+function exRowsHTML(){
+  var rows=exFiltered();
+  rows.sort(function(a,b){return s(b.session).localeCompare(s(a.session))||(gradeOrder[a.grade]||99)-(gradeOrder[b.grade]||99)||s(a.student_name).localeCompare(s(b.student_name))});
+  if(!rows.length)return '<tr><td colspan="7"><div class="emp"><p>No results saved yet</p></div></td></tr>';
+  return rows.map(function(r){
+    return '<tr><td><b>'+uxE(r.student_name)+'</b><br><span style="color:#9B9B9B;font-size:10px">'+uxE(r.admission_no)+'</span></td><td>'+uxE(uxClsSec(r))+'</td><td>'+uxE(r.term)+'<br><span style="color:#9B9B9B;font-size:10px">'+uxE(r.session)+'</span></td>'+
+      '<td>'+r.obtained+'/'+r.total+'</td><td>'+r.percent+'% <span style="color:#9B9B9B;font-size:10px">('+r.grade_letter+')</span></td><td>'+'<span class="badge" style="background:'+(r.result==='Pass'?C.g:C.c)+'1A;color:'+(r.result==='Pass'?'#166534':'#DC2626')+';border-color:'+(r.result==='Pass'?C.g:C.c)+'33">'+r.result+'</span>'+'</td>'+
+      '<td style="white-space:nowrap"><button class="uxb sm" style="background:'+C.g+';color:#064E3B" onclick="exDmc('+r.id+')">DMC</button> <button class="uxb sm" style="background:'+C.t+';color:#064E3B" onclick="exAnnual('+r.id+')">Annual</button> <button class="uxb sm ghost" onclick="exEdit('+r.id+')">Edit</button> <button class="uxb sm ghost" style="color:#DC2626" onclick="exDel('+r.id+')">Del</button></td></tr>';
+  }).join('');
+}
+
+// ---------- DMC document ----------
+function exPosition(r){
+  var peers=uxList('ExamDMC').filter(function(x){return x.grade===r.grade&&x.term===r.term&&x.session===r.session});
+  var better=peers.filter(function(x){return x.obtained>r.obtained}).length;
+  return {pos:better+1,of:peers.length};
+}
+function exDmcPage(r){
+  var stu=uxStuFor(r),photo=stu&&stu.photo?stu.photo:'';
+  var p=exPosition(r);
+  var h='<div class="pg">'+uxHead('DETAILED MARKS CERTIFICATE (DMC)',photo||'');
+  h+='<div class="ses"><span>Session: <b>'+uxE(r.session)+'</b></span><span><b>'+uxE(r.term)+'</b></span><span>Date: <b>'+uxFmt(r.date)+'</b></span></div>';
+  h+='<table class="inf">'+
+    '<tr><td class="l">Student Name:</td><td><b>'+uxE(r.student_name)+'</b></td><td class="l">Roll No:</td><td><b>'+uxE(r.roll_no||'--')+'</b></td></tr>'+
+    '<tr><td class="l">Father Name:</td><td><b>'+uxE(r.father||'--')+'</b></td><td class="l">Class:</td><td><b>'+uxE(uxClsSec(r))+'</b></td></tr>'+
+    '<tr><td class="l">Reg / Adm No:</td><td><b>'+uxE(r.admission_no||'--')+'</b></td><td class="l">Date of Birth:</td><td><b>'+(uxFmt(stu&&stu.date_of_birth)||'--')+'</b></td></tr>'+(r.group?'<tr><td class="l">Group:</td><td colspan="3"><b>'+uxE(r.group)+'</b></td></tr>':'')+'</table>';
+  var hasP=r.subjects.some(function(x){return (x.th!==''&&x.th!=null)||(x.pr!==''&&x.pr!=null)});
+  h+='<p class="st">has secured the marks shown against each subject in the <b>'+uxE(r.term)+'</b>'+(r.exam_month?' held in the month of <b>'+uxE(r.exam_month)+'</b>':'')+'.</p>';
+  h+='<table class="mk"><thead><tr><th style="width:42mm">Subjects</th><th style="width:20mm">Total Marks</th>'+(hasP?'<th style="width:17mm">Theory</th><th style="width:17mm">Pract.</th>':'')+'<th style="width:22mm">Marks Obtained</th><th>Marks in Words</th><th style="width:18mm">Remarks</th></tr></thead><tbody>';
+  r.subjects.forEach(function(x){
+    var pc=x.total?x.obt/x.total*100:0,fail=pc<33;
+    h+='<tr><td>'+uxE(x.name)+'</td><td class="c">'+x.total+'</td>'+(hasP?'<td class="c">'+(x.th===''||x.th==null?'&ndash;':x.th)+'</td><td class="c">'+(x.pr===''||x.pr==null?'&ndash;':x.pr)+'</td>':'')+'<td class="c"><b>'+x.obt+'</b></td><td class="w">'+uxWords(x.obt)+'</td><td class="c'+(fail?' fl':'')+'">'+(fail?'Fail':uxGrade(pc))+'</td></tr>';
+  });
+  h+='<tr class="tot"><td>Total</td><td class="c">'+r.total+'</td>'+(hasP?'<td></td><td></td>':'')+'<td class="c">'+r.obtained+'</td><td class="w" colspan="2">'+uxWords(r.obtained)+' Only</td></tr></tbody></table>';
+  h+='<div class="sum"><div><em>Percentage</em><b>'+r.percent+'%</b></div><div><em>Grade</em><b>'+uxE(r.grade_letter)+'</b></div><div><em>Result</em><b style="color:'+(r.result==='Pass'?'#166534':'#B91C1C')+'">'+r.result.toUpperCase()+'</b></div><div><em>Position</em><b>'+uxOrd(p.pos)+(p.of>1?' / '+p.of:'')+'</b></div></div>';
+  h+='<div class="rem"><b>Remarks:</b> '+uxE(r.remarks)+'</div>';
+  h+='<div class="sig"><div>Checked by</div><div class="dt2">Date: '+uxFmt(r.date)+'</div><div>Principal</div></div>';
+  h+='<div class="note">Errors and omissions excepted. Any error must be reported to the school office within 30 days of the date of issue.<br><b>'+UX_NAME+' '+UX_PLACE+'</b></div></div>';
+  return h;
+}
+function exDmc(id){var r=exById(id);if(!r)return;uxPreview('DMC - '+r.student_name,uxDocHTML('DMC - '+r.student_name,exDmcPage(r)))}
+
+// ---------- Annual DMC (all three terms together) ----------
+function exAnnual(id){
+  var r=exById(id);if(!r)return;
+  var recs=uxList('ExamDMC').filter(function(x){return String(x.student_id)===String(r.student_id)&&x.session===r.session});
+  var byTerm={};UX_TERMS.forEach(function(t){recs.forEach(function(x){if(x.term===t)byTerm[t]=x})});
+  var names=[];UX_TERMS.forEach(function(t){if(byTerm[t])byTerm[t].subjects.forEach(function(x){if(names.indexOf(x.name)<0)names.push(x.name)})});
+  var stu=uxStuFor(r),photo=stu&&stu.photo?stu.photo:'';
+  var GT=0,GO=0,failSub=0;
+  var h='<div class="pg">'+uxHead('ANNUAL DETAILED MARKS CERTIFICATE',photo||'');
+  h+='<div class="ses"><span>Session: <b>'+uxE(r.session)+'</b></span><span><b>All three terms</b></span><span>Date: <b>'+uxFmt(perDay())+'</b></span></div>';
+  h+='<table class="inf"><tr><td class="l">Student Name:</td><td><b>'+uxE(r.student_name)+'</b></td><td class="l">Roll No:</td><td><b>'+uxE(r.roll_no||'--')+'</b></td></tr>'+
+     '<tr><td class="l">Father Name:</td><td><b>'+uxE(r.father||'--')+'</b></td><td class="l">Class:</td><td><b>'+uxE(uxClsSec(r))+'</b></td></tr>'+
+     '<tr><td class="l">Reg / Adm No:</td><td colspan="3"><b>'+uxE(r.admission_no||'--')+'</b></td></tr></table>';
+  h+='<p class="st">has secured the following marks in the <b>First, Second and Third Term Exams</b> of the session <b>'+uxE(r.session)+'</b>.</p>';
+  h+='<table class="mk" style="margin-top:3mm"><thead><tr><th>Subjects</th>'+UX_TERMS.map(function(t){return '<th>'+t.replace(' Exam','')+'</th>'}).join('')+'<th>Total</th><th>%</th></tr></thead><tbody>';
+  names.forEach(function(nm){
+    var O=0,T=0;
+    h+='<tr><td>'+uxE(nm)+'</td>';
+    UX_TERMS.forEach(function(t){
+      var x=null;if(byTerm[t])byTerm[t].subjects.forEach(function(y){if(y.name===nm)x=y});
+      if(x){O+=x.obt;T+=x.total;h+='<td class="c">'+x.obt+' / '+x.total+'</td>'}else h+='<td class="c">&mdash;</td>';
+    });
+    var pc=T?Math.round(O/T*1000)/10:0;if(T&&pc<33)failSub++;
+    GO+=O;GT+=T;
+    h+='<td class="c"><b>'+O+' / '+T+'</b></td><td class="c'+(T&&pc<33?' fl':'')+'">'+pc+'</td></tr>';
+  });
+  var gp=GT?Math.round(GO/GT*10000)/100:0;
+  h+='<tr class="tot"><td>Grand Total</td>'+UX_TERMS.map(function(t){return '<td class="c">'+(byTerm[t]?byTerm[t].obtained+' / '+byTerm[t].total:'&mdash;')+'</td>'}).join('')+'<td class="c">'+GO+' / '+GT+'</td><td class="c">'+gp+'</td></tr></tbody></table>';
+  h+='<p class="st" style="margin-top:3mm">Total marks in words: <b>'+uxWords(GO)+' Only</b></p>';
+  h+='<div class="sum"><div><em>Percentage</em><b>'+gp+'%</b></div><div><em>Grade</em><b>'+uxGrade(gp)+'</b></div><div><em>Result</em><b style="color:'+(failSub?'#B91C1C':'#166534')+'">'+(failSub?'FAIL':'PASS')+'</b></div><div><em>Terms</em><b>'+Object.keys(byTerm).length+' / 3</b></div></div>';
+  h+='<div class="rem"><b>Remarks:</b> </div>';
+  h+='<div class="sig"><div>Class Teacher</div><div class="dt2">Date: '+uxFmt(perDay())+'</div><div>Principal</div></div>';
+  h+='<div class="note">Errors and omissions excepted.<br><b>'+UX_NAME+' '+UX_PLACE+'</b></div></div>';
+  uxPreview('Annual DMC - '+r.student_name,uxDocHTML('Annual DMC',h));
+}
+
+// =====================================================================
+// ===== SCHOOL LEAVING CERTIFICATE (saved, with re-admission) =========
+// =====================================================================
+var LV_REASONS=['Family shifted to another city','Transferred to another school','Financial reasons','Completed Class 10 / passed out','Personal reasons','Other'];
+var LV_CONDUCT=['Excellent','Very Good','Good','Satisfactory'];
+var _lv={cls:'',stu:'',q:''};
+
+function lvById(id){var a=uxList('LeavingCerts');for(var i=0;i<a.length;i++)if(a[i].id===id)return a[i];return null}
+function renderLeaving(){
+  var all=uxList('LeavingCerts');
+  var h='<div class="fade"><div class="uxbox"><div class="uxt">&#127891; Issue School Leaving Certificate</div><div class="uxg">';
+  h+='<div class="ff"><label>Class</label><select onchange="_lv.cls=this.value;_lv.stu=\'\';render()">'+uxClassOpts(_lv.cls)+'</select></div>';
+  h+='<div class="ff"><label>Student</label><select id="lvStu" onchange="_lv.stu=this.value"><option value="">'+(_lv.cls?'Select student':'Select class first')+'</option>';
+  if(_lv.cls)uxStudents(_lv.cls,true).forEach(function(x){h+='<option value="'+x.id+'"'+(String(x.id)===String(_lv.stu)?' selected':'')+'>'+(s(x.roll_no)?x.roll_no+' - ':'')+uxE(x.name)+'</option>'});
+  h+='</select></div>';
+  h+='<div class="ff"><label>Date of leaving</label><input type="date" id="lvDate" value="'+perDay()+'"></div>';
+  h+='<div class="ff"><label>Reason for leaving</label><select id="lvReason" onchange="document.getElementById(\'lvOther\').style.display=this.value===\'Other\'?\'block\':\'none\'">'+LV_REASONS.map(function(x){return '<option>'+x+'</option>'}).join('')+'</select></div>';
+  h+='<div class="ff" id="lvOther" style="display:none"><label>Other reason</label><input id="lvOtherTxt" placeholder="Write reason"></div>';
+  h+='<div class="ff"><label>Character / conduct</label><select id="lvConduct">'+LV_CONDUCT.map(function(x){return '<option'+(x==='Good'?' selected':'')+'>'+x+'</option>'}).join('')+'</select></div>';
+  h+='<div class="ff"><label>School dues</label><select id="lvDues"><option>All dues cleared</option><option>Dues pending</option></select></div>';
+  h+='<div class="ff"><label>Last exam result / progress</label><input id="lvProg" placeholder="e.g. Passed Class 8, 72%"></div>';
+  h+='<div class="ff"><label>Remarks</label><input id="lvRem" placeholder="Optional"></div></div>';
+  h+='<div class="uxrow"><button class="uxb" style="background:'+C.g+';color:#064E3B" onclick="lvIssue()">&#10004; Save &amp; Create Certificate</button></div>';
+  h+='<div class="uxnote">The student is marked <b>Left</b> and the certificate is saved below. If the student comes back, press <b>Re-admit</b> &mdash; the old record and certificate stay saved.</div></div>';
+
+  h+='<div class="uxbox"><div class="uxt">&#128193; Saved Certificates ('+all.length+')</div>';
+  h+='<div class="uxrow" style="margin-top:0;margin-bottom:10px"><input class="fs" style="min-width:200px" placeholder="Search name or cert no..." value="'+uxE(_lv.q)+'" oninput="_lv.q=this.value;lvFilter()"></div>';
+  h+='<div class="tw"><div class="tsx"><table><thead><tr><th>Cert No</th><th>Student</th><th>Class</th><th>Left on</th><th>Reason</th><th>Status</th><th style="width:210px">Actions</th></tr></thead><tbody id="lvBody">'+lvRowsHTML()+'</tbody></table></div></div></div></div>';
+  return h;
+}
+function lvFilter(){var b=document.getElementById('lvBody');if(b)b.innerHTML=lvRowsHTML()}
+function lvRowsHTML(){
+  var lq=_lv.q.toLowerCase().trim();
+  var rows=uxList('LeavingCerts').filter(function(r){return !lq||(r.name+' '+r.cert_no+' '+r.admission_no).toLowerCase().indexOf(lq)>=0}).slice().reverse();
+  if(!rows.length)return '<tr><td colspan="7"><div class="emp"><p>No certificates yet</p></div></td></tr>';
+  return rows.map(function(r){
+    var back=(r.readmissions||[]).length;
+    return '<tr><td>'+uxE(r.cert_no)+'</td><td><b>'+uxE(r.name)+'</b><br><span style="color:#9B9B9B;font-size:10px">'+uxE(r.admission_no)+'</span></td><td>'+uxE(uxClsSec(r))+'</td><td>'+uxFmt(r.leaving_date)+'</td><td>'+uxE(r.reason)+'</td><td>'+badge(r.status)+(back?'<br><span style="color:#9B9B9B;font-size:10px">back '+uxFmt(r.readmissions[back-1].date)+'</span>':'')+'</td>'+
+      '<td style="white-space:nowrap"><button class="uxb sm" style="background:'+C.g+';color:#064E3B" onclick="lvPrint('+r.id+')">Print</button> '+(r.status==='Left'?'<button class="uxb sm" style="background:'+C.a+';color:#fff" onclick="lvReadmit('+r.id+')">Re-admit</button> ':'')+'<button class="uxb sm ghost" style="color:#DC2626" onclick="lvDel('+r.id+')">Del</button></td></tr>';
+  }).join('');
+}
+function lvIssue(){
+  var sx=uxStuById(_lv.stu);
+  if(!sx){alert('Please select a class and a student.');return}
+  var date=document.getElementById('lvDate').value||perDay();
+  var reason=document.getElementById('lvReason').value;
+  if(reason==='Other')reason=s(document.getElementById('lvOtherTxt').value)||'Other';
+  var a=uxList('LeavingCerts');
+  var no='LC-'+new Date().getFullYear()+'-'+uxPad(uxNext(a),3);
+  var rec={id:uxNext(a),cert_no:no,student_id:sx.id,admission_no:sx.admission_no,name:sx.name,father:sx.parent_name||'',gender:sx.gender||'',
+    dob:sx.date_of_birth||'',admission_date:sx.admission_date||'',grade:String(sx.grade),section:sx.section||'',roll_no:sx.roll_no||'',
+    leaving_date:date,reason:reason,conduct:document.getElementById('lvConduct').value,dues:document.getElementById('lvDues').value,
+    progress:s(document.getElementById('lvProg').value),remarks:s(document.getElementById('lvRem').value),issued_on:perDay(),status:'Left',readmissions:[]};
+  a.push(rec);
+  sx.status='Left';sx.leaving_date=date;
+  saveDB();_lv.stu='';render();lvPrint(rec.id);
+}
+function lvDoc(r){
+  var he=r.gender==='Female'?'she':'he',his=r.gender==='Female'?'her':'his',son=r.gender==='Female'?'daughter':'son';
+  var h='<div class="pg lc">'+uxHead('SCHOOL LEAVING CERTIFICATE',false);
+  h+='<div class="lcno"><span>Certificate No: <b>'+uxE(r.cert_no)+'</b></span><span>Date of issue: <b>'+uxFmt(r.issued_on)+'</b></span></div>';
+  h+='<p class="lcp">This is to certify that <u>'+uxE(r.name)+'</u> '+son+' of <u>'+uxE(r.father||'__________')+'</u> was a bonafide student of this school. '+
+     (he.charAt(0).toUpperCase()+he.slice(1))+' was admitted on <u>'+(uxFmt(r.admission_date)||'__________')+'</u> and left the school on <u>'+uxFmt(r.leaving_date)+'</u> while studying in <u>'+uxE(uxCls(r.grade))+'</u>. '+
+     'To the best of our knowledge, '+his+' conduct and character remained <u>'+uxE(r.conduct)+'</u>.</p>';
+  h+='<table class="lct">'+
+    '<tr><td class="l">Student Name</td><td><b>'+uxE(r.name)+'</b></td></tr>'+
+    '<tr><td class="l">Father Name</td><td>'+uxE(r.father||'--')+'</td></tr>'+
+    '<tr><td class="l">Admission No</td><td>'+uxE(r.admission_no||'--')+'</td></tr>'+
+    '<tr><td class="l">Date of Birth</td><td>'+(uxFmt(r.dob)||'--')+'</td></tr>'+
+    '<tr><td class="l">Date of Admission</td><td>'+(uxFmt(r.admission_date)||'--')+'</td></tr>'+
+    '<tr><td class="l">Class last studied</td><td>'+uxE(uxClsSec(r))+'</td></tr>'+
+    '<tr><td class="l">Last exam result / progress</td><td>'+uxE(r.progress||'--')+'</td></tr>'+
+    '<tr><td class="l">Date of leaving</td><td><b>'+uxFmt(r.leaving_date)+'</b></td></tr>'+
+    '<tr><td class="l">Reason for leaving</td><td>'+uxE(r.reason)+'</td></tr>'+
+    '<tr><td class="l">Character / conduct</td><td>'+uxE(r.conduct)+'</td></tr>'+
+    '<tr><td class="l">School dues</td><td>'+uxE(r.dues||'--')+'</td></tr>'+
+    '<tr><td class="l">Remarks</td><td>'+uxE(r.remarks||'--')+'</td></tr></table>';
+  h+='<div class="sig" style="margin-top:28mm"><div>Class Teacher / Clerk</div><div class="dt2">Stamp</div><div>Principal</div></div>';
+  h+='<div class="note"><b>'+UX_NAME+' '+UX_PLACE+'</b></div></div>';
+  return h;
+}
+function lvPrint(id){var r=lvById(id);if(!r)return;uxPreview('Leaving Certificate - '+r.name,uxDocHTML('Leaving Certificate',lvDoc(r)))}
+function lvDel(id){
+  if(!confirm('Delete this certificate record? (The student record is not deleted.)'))return;
+  var a=uxList('LeavingCerts');for(var i=0;i<a.length;i++)if(a[i].id===id){a.splice(i,1);break}
+  saveDB();render();
+}
+function lvReadmit(id){
+  var r=lvById(id);if(!r)return;
+  var h='<button class="mx" onclick="closem()">&times;</button><h3>Re-admit '+uxE(r.name)+'</h3><p class="uxnote" style="margin:0 0 10px">Left on '+uxFmt(r.leaving_date)+' from '+uxE(uxClsSec(r))+'. All old records of this student are kept.</p>';
+  h+='<div class="uxg" style="grid-template-columns:1fr 1fr"><div class="ff"><label>Class</label><select id="raCls">'+uxClassOpts(r.grade).replace('<option value="">Select class</option>','')+'</select></div>';
+  h+='<div class="ff"><label>Section</label><select id="raSec"><option'+(r.section==='A'?' selected':'')+'>A</option><option'+(r.section==='B'?' selected':'')+'>B</option></select></div>';
+  h+='<div class="ff"><label>Re-admission date</label><input type="date" id="raDate" value="'+perDay()+'"></div>';
+  h+='<div class="ff"><label>Note</label><input id="raNote" placeholder="Optional"></div></div>';
+  h+='<div class="uxrow"><button class="uxb" style="background:'+C.g+';color:#064E3B" onclick="lvReadmitSave('+id+')">Re-admit student</button><button class="uxb ghost" onclick="closem()">Cancel</button></div>';
+  document.getElementById('mc').innerHTML=h;document.getElementById('mo').style.display='flex';
+}
+function lvReadmitSave(id){
+  var r=lvById(id);if(!r)return;
+  var g=document.getElementById('raCls').value,sec=document.getElementById('raSec').value,d=document.getElementById('raDate').value||perDay();
+  var sx=uxStuById(r.student_id);
+  if(sx){sx.status='Active';sx.grade=g;sx.section=sec;sx.readmission_date=d}
+  else{alert('Student record not found. Please add the student again from the Admission Form.')}
+  r.readmissions=r.readmissions||[];r.readmissions.push({date:d,grade:g,section:sec,note:s(document.getElementById('raNote').value)});
+  r.status='Re-admitted';
+  saveDB();document.getElementById('mo').style.display='none';render();toast('Student re-admitted');
+}
+
+// =====================================================================
+// ===== STUDENT CARDS (landscape, colourful, printable front + back) ==
+// =====================================================================
+var _sc={cls:'',stu:'all'};
+
+function scArt(){
+  return '<svg viewBox="0 0 300 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">'+
+    '<defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DD3FC"/><stop offset="1" stop-color="#E0F2FE"/></linearGradient></defs>'+
+    '<rect width="300" height="100" fill="url(#sk)"/><circle cx="256" cy="24" r="12" fill="#FDE047"/>'+
+    '<path d="M0 78 Q60 52 120 72 T300 62 V100 H0Z" fill="#86EFAC"/><path d="M0 88 Q90 70 170 86 T300 80 V100 H0Z" fill="#22C55E"/>'+
+    '<rect x="88" y="44" width="124" height="38" fill="#FEF3C7" stroke="#92400E" stroke-width="1.5"/><rect x="132" y="30" width="36" height="52" fill="#FDE68A" stroke="#92400E" stroke-width="1.5"/>'+
+    '<path d="M126 30 L150 14 L174 30Z" fill="#B91C1C"/><rect x="144" y="58" width="12" height="24" fill="#92400E"/>'+
+    '<g fill="#38BDF8" stroke="#92400E" stroke-width="1"><rect x="98" y="52" width="12" height="12"/><rect x="118" y="52" width="12" height="12"/><rect x="170" y="52" width="12" height="12"/><rect x="190" y="52" width="12" height="12"/><rect x="144" y="38" width="12" height="12"/></g>'+
+    '<line x1="150" y1="14" x2="150" y2="2" stroke="#444" stroke-width="1.2"/><path d="M150 2 L164 6 L150 10Z" fill="#16A34A"/></svg>';
+}
+function scFront(x,c){
+  var ini=s(x.name).split(/\s+/).slice(0,2).map(function(w){return w.charAt(0)}).join('').toUpperCase();
+  return '<div class="idw"><div class="idc" style="--c1:'+c.c1+';--c2:'+c.c2+'"><i class="deco d1"></i><i class="deco d2"></i>'+
+    '<div class="hd"><img class="lg" src="'+uxLogo()+'"><div class="tt"><b>'+UX_NAME+'</b><span>'+UX_PLACE+'</span></div></div>'+
+    '<div class="bd"><div class="pf">'+(x.photo?'<img src="'+x.photo+'">':'<i>'+uxE(ini)+'</i>')+'</div><div class="dtl"><div class="nm">'+uxE(x.name)+'</div>'+
+    '<div class="rw"><em>Father</em><span>'+uxE(x.parent_name||'--')+'</span></div>'+
+    '<div class="rw"><em>Class</em><span>'+uxE(uxClsSec(x))+'</span></div>'+
+    '<div class="rw"><em>Adm No</em><span>'+uxE(x.admission_no||'--')+'</span></div>'+
+    '<div class="rw"><em>Roll No</em><span>'+uxE(x.roll_no||'--')+'</span></div>'+
+    '<div class="rw"><em>Phone</em><span>'+uxE(x.parent_phone||'--')+'</span></div></div></div>'+
+    '<div class="ft"><span>Valid till: '+uxE(c.valid)+'</span><span>STUDENT CARD</span><span class="sgn">Principal</span></div></div></div>';
+}
+function scBack(x,c){
+  var pics=c.pics.length?c.pics.map(function(p){return '<img src="'+p+'">'}).join(''):scArt();
+  return '<div class="idw"><div class="idc" style="--c1:'+c.c1+';--c2:'+c.c2+'"><i class="deco d1"></i>'+
+    '<div class="pics">'+pics+'</div>'+
+    '<div class="det"><div><em>Student</em><b>'+uxE(x.name)+'</b></div><div><em>Class</em><b>'+uxE(uxClsSec(x))+'</b></div>'+
+    '<div><em>Father / Guardian</em><b>'+uxE(x.parent_name||'--')+'</b></div><div><em>Admission No</em><b>'+uxE(x.admission_no||'--')+'</b></div>'+
+    '<div><em>Parent Phone</em><b>'+uxE(x.parent_phone||'--')+'</b></div><div><em>Admission Date</em><b>'+(uxFmt(x.admission_date)||'--')+'</b></div>'+
+    '<div class="w"><em>Address</em><b>'+uxE(x.address||'--')+'</b></div></div>'+
+    '<div class="nt">This card is the property of '+UX_NAME+', '+UX_PLACE+'. If found, please return to: '+uxE(c.addr)+(c.phone?' &bull; Ph: '+uxE(c.phone):'')+'</div></div></div>';
+}
+function scList(){
+  if(!_sc.cls)return [];
+  var l=uxStudents(_sc.cls,true);
+  if(_sc.stu!=='all')l=l.filter(function(x){return String(x.id)===String(_sc.stu)});
+  return l;
+}
+function renderCards(){
+  var c=uxCfg(),h='<div class="fade">';
+  h+='<div class="uxbox"><div class="uxt">&#127912; Student Cards &mdash; Landscape ID Card</div><div class="uxg">';
+  h+='<div class="ff"><label>Class</label><select onchange="_sc.cls=this.value;_sc.stu=\'all\';render()">'+uxClassOpts(_sc.cls)+'</select></div>';
+  h+='<div class="ff"><label>Student</label><select onchange="_sc.stu=this.value;scRefresh()"><option value="all">'+(_sc.cls?'All students of class':'Select class first')+'</option>';
+  if(_sc.cls)uxStudents(_sc.cls,true).forEach(function(x){h+='<option value="'+x.id+'"'+(String(x.id)===String(_sc.stu)?' selected':'')+'>'+uxE(x.name)+'</option>'});
+  h+='</select></div>';
+  h+='<div class="ff"><label>Valid till</label><input value="'+uxE(c.valid)+'" onchange="scSet(\'valid\',this.value)"></div>';
+  h+='<div class="ff"><label>School phone (back side)</label><input value="'+uxE(c.phone)+'" onchange="scSet(\'phone\',this.value)" placeholder="e.g. 0300-1234567"></div>';
+  h+='<div class="ff" style="grid-column:1/-1"><label>School address (back side)</label><input value="'+uxE(c.addr)+'" onchange="scSet(\'addr\',this.value)"></div></div>';
+
+  h+='<div class="uxt" style="margin-top:16px;margin-bottom:8px">Card colour</div><div class="uxsw">';
+  UX_PRESETS.forEach(function(p,i){h+='<button class="sw'+(c.c1===p.a&&c.c2===p.b?' on':'')+'" title="'+p.n+'" style="background:linear-gradient(135deg,'+p.a+','+p.b+')" onclick="scPreset('+i+')"></button>'});
+  h+='<span style="font-size:11px;color:#777;margin-left:6px">Custom:</span><input type="color" value="'+c.c1+'" onchange="scSet(\'c1\',this.value,true)"><input type="color" value="'+c.c2+'" onchange="scSet(\'c2\',this.value,true)"></div>';
+
+  h+='<div class="uxt" style="margin-top:16px;margin-bottom:4px">School pictures (back side, up to 3)</div><div class="uxpics">';
+  c.pics.forEach(function(p,i){h+='<div><img src="'+p+'"><button onclick="scDelPic('+i+')">&times;</button></div>'});
+  h+='</div><div class="uxrow" style="margin-top:8px"><label class="uxb ghost sm" style="cursor:pointer">+ Add school picture<input type="file" accept="image/*" multiple style="display:none" onchange="scAddPics(this)"></label>'+
+     '<label class="uxb ghost sm" style="cursor:pointer">Change school logo<input type="file" accept="image/*" style="display:none" onchange="scLogo(this)"></label>'+
+     (c.logo?'<button class="uxb ghost sm" onclick="scLogoReset()">Use original logo</button>':'')+'</div>';
+  if(!c.pics.length)h+='<div class="uxnote">No picture added &mdash; a school drawing is shown on the back until you add your own pictures.</div>';
+
+  h+='<div class="uxrow"><button class="uxb" style="background:'+C.g+';color:#064E3B" onclick="scPrint(\'both\')">&#128424; Print Front + Back</button><button class="uxb ghost" onclick="scPrint(\'front\')">Front only</button><button class="uxb ghost" onclick="scPrint(\'back\')">Back only</button></div>';
+  h+='<div class="uxnote">Printing: A4 page, 10 cards per sheet (85.6 &times; 54 mm). Front pages print first, then back pages (set the printer to 100% scale, colour on).</div></div>';
+  h+='<div id="scPrev">'+scPrevHTML()+'</div></div>';
+  return h;
+}
+function scPrevHTML(){
+  var l=scList(),c=uxCfg();
+  if(!_sc.cls)return '<div class="emp"><p>Select a class to see its cards</p></div>';
+  if(!l.length)return '<div class="emp"><p>No active students in this class</p></div>';
+  return '<div class="uxcards">'+l.map(function(x){
+    return '<div class="uxcpair"><div class="cap"><span>'+uxE(x.name)+'</span><button class="uxb sm ghost" onclick="scPrintOne('+x.id+')">&#128424; Print</button></div>'+scFront(x,c)+scBack(x,c)+'</div>';
+  }).join('')+'</div>';
+}
+function scRefresh(){var e=document.getElementById('scPrev');if(e)e.innerHTML=scPrevHTML()}
+function scSet(k,v,rerender){uxCfg()[k]=v;saveDB();if(rerender)render();else scRefresh()}
+function scPreset(i){var c=uxCfg();c.c1=UX_PRESETS[i].a;c.c2=UX_PRESETS[i].b;saveDB();render()}
+function scAddPics(inp){
+  var c=uxCfg(),files=Array.prototype.slice.call(inp.files||[]),room=3-c.pics.length;
+  if(room<=0){alert('Maximum 3 pictures. Remove one first.');return}
+  files=files.slice(0,room);var left=files.length;if(!left)return;
+  files.forEach(function(f){uxImg(f,520,function(d){c.pics.push(d);if(--left===0){saveDB();render()}})});
+}
+function scDelPic(i){uxCfg().pics.splice(i,1);saveDB();render()}
+function scLogo(inp){var f=inp.files&&inp.files[0];if(!f)return;uxImg(f,200,function(d){uxCfg().logo=d;saveDB();render()},'image/png')}
+function scLogoReset(){delete uxCfg().logo;saveDB();render()}
+function scSheets(list,mode){
+  var c=uxCfg(),out='',i,j;
+  for(i=0;i<list.length;i+=10){
+    var chunk=list.slice(i,i+10);
+    if(mode!=='back')out+='<div class="sheet">'+chunk.map(function(x){return scFront(x,c)}).join('')+'</div>';
+    if(mode!=='front'){
+      var cells=[];
+      for(j=0;j<chunk.length;j+=2){
+        var a=chunk[j],b=chunk[j+1];
+        if(b){cells.push(scBack(b,c));cells.push(scBack(a,c))}else{cells.push('<div class="idw" style="outline:none"></div>');cells.push(scBack(a,c))}
+      }
+      out+='<div class="sheet">'+cells.join('')+'</div>';
+    }
+  }
+  return out;
+}
+function scPrint(mode){
+  var l=scList();if(!l.length){alert('Select a class (and student) first.');return}
+  uxPreview('Student Cards',uxDocHTML('Student Cards',scSheets(l,mode)));
+}
+function scPrintOne(id){
+  var x=uxStuById(id);if(!x)return;
+  uxPreview('Card - '+x.name,uxDocHTML('Student Card',scSheets([x],'both')));
+}
+
+// =====================================================================
+// ===== FEES: RECEIVE PAYMENT + PRINTABLE RECEIPT =====================
+// =====================================================================
+function feeBtns(i){
+  var r=window._rows&&window._rows[i];if(!r)return '';
+  var due=n(r.amount)-n(r.amount_paid);
+  return (due>0?'<button class="btn-d" onclick="feeReceive('+i+')" style="color:#16A34A;font-weight:700">Receive</button> ':'')+
+         (n(r.amount_paid)>0?'<button class="btn-d" onclick="feeReceipt('+i+')" style="color:#7C3AED;font-weight:700">Receipt</button> ':'');
+}
+function feeNextNo(){
+  var m=0,re=/(\d+)\s*$/;
+  function chk(v){var x=re.exec(s(v));if(x&&Number(x[1])>m)m=Number(x[1])}
+  (DB['Fees & Payments']||[]).forEach(function(r){chk(r.receipt_no)});
+  uxList('FeeReceipts').forEach(function(r){chk(r.receipt_no)});
+  return 'RCP-'+new Date().getFullYear()+'-'+uxPad(m+1,3);
+}
+function feeReceive(i){
+  var r=window._rows[i];if(!r)return;
+  var due=n(r.amount)-n(r.amount_paid);
+  var h='<button class="mx" onclick="closem()">&times;</button><h3>Receive Fee &mdash; '+uxE(r.student_name)+'</h3>';
+  h+='<p class="uxnote" style="margin:0 0 10px">'+uxE(r.fee_type)+(s(r.month)?' &middot; '+uxE(r.month):'')+' &middot; Total Rs '+f(r.amount)+' &middot; Paid Rs '+f(r.amount_paid)+' &middot; <b style="color:#DC2626">Balance Rs '+f(due)+'</b></p>';
+  h+='<div class="uxg" style="grid-template-columns:1fr 1fr">';
+  h+='<div class="ff"><label>Amount received now (Rs)</label><input type="number" id="fvAmt" value="'+due+'" max="'+due+'"></div>';
+  h+='<div class="ff"><label>Date</label><input type="date" id="fvDate" value="'+perDay()+'"></div>';
+  h+='<div class="ff"><label>Payment method</label><select id="fvMeth"><option>Cash</option><option>Bank Transfer</option><option>Jazz Cash / Easypaisa</option><option>Cheque</option><option>Online</option></select></div>';
+  h+='<div class="ff"><label>Received by</label><input id="fvBy" placeholder="Name of clerk / accountant"></div>';
+  h+='<div class="ff" style="grid-column:1/-1"><label>Note (optional)</label><input id="fvNote"></div></div>';
+  h+='<div class="uxrow"><button class="uxb" style="background:'+C.g+';color:#064E3B" onclick="feeSavePay('+i+')">&#10004; Save &amp; Print Receipt</button><button class="uxb ghost" onclick="closem()">Cancel</button></div>';
+  document.getElementById('mc').innerHTML=h;document.getElementById('mo').style.display='flex';
+}
+function feeSavePay(i){
+  var r=window._rows[i];if(!r)return;
+  var due=n(r.amount)-n(r.amount_paid),amt=n(document.getElementById('fvAmt').value);
+  if(amt<=0){alert('Enter the amount received.');return}
+  if(amt>due){alert('Amount is more than the balance (Rs '+f(due)+').');return}
+  var before=n(r.amount_paid),date=document.getElementById('fvDate').value||perDay(),meth=document.getElementById('fvMeth').value;
+  var no=feeNextNo();
+  r.amount_paid=before+amt;r.paid_date=date;r.payment_method=meth;r.receipt_no=no;
+  r.status=r.amount_paid>=n(r.amount)?'Paid':'Partial';
+  var a=uxList('FeeReceipts');
+  var rc={id:uxNext(a),receipt_no:no,fee_id:r.id,student_id:r.student_id,admission_no:r.admission_no,student_name:r.student_name,grade:r.grade,section:r.section,
+    fee_type:r.fee_type,month:r.month,total:n(r.amount),before:before,paid:amt,balance:n(r.amount)-r.amount_paid,date:date,method:meth,by:s(document.getElementById('fvBy').value),note:s(document.getElementById('fvNote').value)};
+  a.push(rc);
+  saveDB();document.getElementById('mo').style.display='none';render();feeShow(rc);
+}
+function feeReceipt(i){
+  var r=window._rows[i];if(!r)return;
+  var list=uxList('FeeReceipts').filter(function(x){return x.fee_id===r.id&&x.student_name===r.student_name&&x.fee_type===r.fee_type&&x.month===r.month});
+  if(list.length>1){
+    var h='<button class="mx" onclick="closem()">&times;</button><h3>Receipts &mdash; '+uxE(r.student_name)+'</h3><div class="uxpick">';
+    list.slice().reverse().forEach(function(x){h+='<button onclick="closem();feeShowId('+x.id+')">'+uxE(x.receipt_no)+' &middot; '+uxFmt(x.date)+' &middot; Rs '+f(x.paid)+'</button>'});
+    h+='</div>';document.getElementById('mc').innerHTML=h;document.getElementById('mo').style.display='flex';return;
+  }
+  if(list.length){feeShow(list[0]);return}
+  // older record without a saved receipt: build from the fee row
+  feeShow({receipt_no:s(r.receipt_no)||'--',student_id:r.student_id,admission_no:r.admission_no,student_name:r.student_name,grade:r.grade,section:r.section,fee_type:r.fee_type,month:r.month,
+    total:n(r.amount),before:0,paid:n(r.amount_paid),balance:n(r.amount)-n(r.amount_paid),date:r.paid_date||perDay(),method:r.payment_method||'',by:'',note:''});
+}
+function feeShowId(id){var a=uxList('FeeReceipts');for(var i=0;i<a.length;i++)if(a[i].id===id){feeShow(a[i]);return}}
+function feeCopy(rc,label,stu){
+  var full=rc.balance<=0;
+  return '<div class="rc"><img class="wm" src="'+uxLogo()+'"><div class="cp">'+label+'</div>'+
+    '<div class="dh"><img class="lg" src="'+uxLogo()+'"><div class="hc"><div class="sn">'+UX_NAME+'</div><div class="sp">'+UX_PLACE+'</div><div class="dt">FEE RECEIPT</div></div><div style="width:17mm"></div></div>'+
+    '<div class="ri"><span>Receipt No: <b>'+uxE(rc.receipt_no)+'</b></span><span>Date: <b>'+uxFmt(rc.date)+'</b></span></div>'+
+    '<table class="inf"><tr><td class="l">Student:</td><td><b>'+uxE(rc.student_name)+'</b></td><td class="l">Adm No:</td><td>'+uxE(rc.admission_no||'--')+'</td></tr>'+
+    '<tr><td class="l">Father:</td><td>'+uxE(stu&&stu.parent_name||'--')+'</td><td class="l">Class:</td><td>'+uxE(uxClsSec(rc))+'</td></tr></table>'+
+    '<table style="margin-top:2mm"><thead><tr><th style="text-align:left">Description</th><th>Total fee</th><th>Paid before</th><th>Paid now</th><th>Balance</th></tr></thead><tbody>'+
+    '<tr><td>'+uxE(rc.fee_type)+(s(rc.month)?' &mdash; '+uxE(rc.month):'')+'</td><td style="text-align:center">Rs '+f(rc.total)+'</td><td style="text-align:center">Rs '+f(rc.before)+'</td><td style="text-align:center"><b>Rs '+f(rc.paid)+'</b></td><td style="text-align:center">Rs '+f(rc.balance)+'</td></tr></tbody></table>'+
+    '<div class="words">Amount received in words: <b>'+uxWords(rc.paid)+' Rupees Only</b> &nbsp;|&nbsp; Method: <b>'+uxE(rc.method||'--')+'</b>'+(rc.note?' &nbsp;|&nbsp; '+uxE(rc.note):'')+'</div>'+
+    '<div class="stamp'+(full?'':' part')+'">'+(full?'PAID':'PART PAID')+'</div>'+
+    '<div class="sg2"><div>Received by'+(rc.by?': '+uxE(rc.by):'')+'</div><div>Stamp / Signature</div></div></div>';
+}
+function feeShow(rc){
+  var stu=uxStuFor(rc);
+  var body='<div style="padding-top:2mm">'+feeCopy(rc,'STUDENT COPY',stu)+'<div class="cut"><span>&#9986; cut here</span></div>'+feeCopy(rc,'SCHOOL COPY',stu)+'</div>';
+  uxPreview('Receipt '+rc.receipt_no,uxDocHTML('Fee Receipt '+rc.receipt_no,body,'@page{margin:6mm}'));
+}
+
 init();
 
 // ===== INSTALLABLE APP (PWA) =====
@@ -3892,6 +5036,7 @@ document.getElementById('installBtn').onclick=function(){if(!_dip)return;_dip.pr
 window.addEventListener('appinstalled',function(){document.getElementById('installBtn').style.display='none'});
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
 </script>
+<div id="appVer">v2026-10-17a</div>
 <script src="config.js"></script>
 <script src="sync.js"></script>
 </body>
